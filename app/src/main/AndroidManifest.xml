@@ -22,6 +22,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".PantallaEntrenamientos"
+            android:exported="false" />
+        <activity
             android:name=".PantallaInicial"
             android:exported="true">
             <intent-filter>
