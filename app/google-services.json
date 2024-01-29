@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "376380296561",
+    "project_id": "tecnifutbol-3d1af",
+    "storage_bucket": "tecnifutbol-3d1af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376380296561:android:345b2e3266a64c0ae3fad0",
+        "android_client_info": {
+          "package_name": "com.dam.tecnifutbol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaAOWK80qo31uX8F5OCmUh49NzNP2YomE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
