@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol.Entrenador;
+package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
