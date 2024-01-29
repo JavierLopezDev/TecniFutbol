@@ -15,6 +15,7 @@ public class SeleccionDeEquipos extends AppCompatActivity {
         setContentView(R.layout.activity_seleccion_de_equipos);
         TextView tv_Editar=findViewById(R.id.tv_Editar);
         TextView tv_Partido=findViewById(R.id.tv_Partido);
-       // tv_Editar.setBackgroundResource();
+        tv_Editar.setBackgroundResource(R.drawable.boton);
+        tv_Partido.setBackgroundResource(R.drawable.boton);
     }
 }

@@ -29,7 +29,7 @@ public class PantallaInicial extends AppCompatActivity {
 
         etEntrenador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
-            setContentView(R.layout.login_firebase);
+            setContentView(R.layout.activity_seleccion_de_equipos);
 
         });
 
