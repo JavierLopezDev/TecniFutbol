@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import com.dam.tecnifutbol.R;
+
 public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase database;
 
