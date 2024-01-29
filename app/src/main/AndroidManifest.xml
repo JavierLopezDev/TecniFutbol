@@ -13,6 +13,9 @@
         android:theme="@style/Theme.TecniFutbol"
         tools:targetApi="31">
         <activity
+            android:name=".LoginFirebase"
+            android:exported="false" />
+        <activity
             android:name=".Entrenador.SeleccionDeEquipos"
             android:exported="false" />
         <activity
