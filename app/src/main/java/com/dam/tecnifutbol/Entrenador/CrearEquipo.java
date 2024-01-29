@@ -1,14 +1,20 @@
-package com.dam.tecnifutbol;
+package com.dam.tecnifutbol.Entrenador;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PantallaEntrenamientos extends AppCompatActivity {
+import com.dam.tecnifutbol.R;
+
+public class CrearEquipo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_entrenamientos);
+        setContentView(R.layout.activity_crear_equipo);
+
+
+
+
     }
 }
