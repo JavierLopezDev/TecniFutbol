@@ -147,7 +147,7 @@ public class LoginFirebase extends AppCompatActivity implements View.OnClickList
     }
 
     private void lanzarActividad() {
-        Intent intent = new Intent(this, PantallaEntrenador.class);
+        Intent intent = new Intent(this, PantallaInicial.class);
         startActivity(intent);
     }
 }
