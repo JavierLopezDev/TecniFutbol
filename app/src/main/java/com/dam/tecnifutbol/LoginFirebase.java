@@ -2,18 +2,16 @@ package com.dam.tecnifutbol;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -31,7 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginFirebase extends AppCompatActivity implements View.OnClickListener {
 
     SignInButton signInButton;
-    Button signOutButton;
+    TextView signOutButton;
     TextView tv_iniciarSesion;
     private static final int SIGN_IN = 123;
     private FirebaseAuth mAuth;
@@ -52,6 +50,8 @@ public class LoginFirebase extends AppCompatActivity implements View.OnClickList
         signOutButton.setVisibility(View.GONE);
         signInButton.setOnClickListener(this);
         signOutButton.setOnClickListener(this);
+
+        signOutButton.setBackground(getResources().getDrawable(R.drawable.boton));
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
