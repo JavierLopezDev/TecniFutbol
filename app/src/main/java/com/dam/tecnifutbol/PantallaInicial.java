@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+
 public class PantallaInicial extends AppCompatActivity {
 
     @Override
@@ -25,7 +27,7 @@ public class PantallaInicial extends AppCompatActivity {
 
         etEntrenador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
-            Intent intent = new Intent(this, LoginFirebase.class);
+            Intent intent = new Intent(this, PantallaEntrenador.class);
             startActivity(intent);
         });
 

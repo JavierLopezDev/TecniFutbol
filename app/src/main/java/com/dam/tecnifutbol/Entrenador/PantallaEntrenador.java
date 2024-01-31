@@ -2,6 +2,7 @@ package com.dam.tecnifutbol.Entrenador;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,9 +17,12 @@ public class PantallaEntrenador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_entrenador);
 
-        //Cuando seleccione btn_Partidos me llevara a la actividad de seleccionDeEquipos
-        /*Intent intent = new Intent(this, SeleccionDeEquipos.class);
-        startActivity(intent);*/
+        Button btn_Partidos = findViewById(R.id.btn_Partidos);
+        btn_Partidos.setOnClickListener(v -> {
+            //Nos movemos a la pantalla de login
+            Intent intent = new Intent(this, SeleccionDeEquipos.class);
+            startActivity(intent);
+        });
 
     }
 }

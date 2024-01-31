@@ -2,6 +2,7 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -17,5 +18,11 @@ public class SeleccionDeEquipos extends AppCompatActivity {
         TextView tv_Partido=findViewById(R.id.tv_Partido);
         tv_Editar.setBackgroundResource(R.drawable.boton);
         tv_Partido.setBackgroundResource(R.drawable.boton);
+
+        tv_Partido.setOnClickListener(v -> {
+            //Nos movemos a la pantalla de login
+            Intent intent = new Intent(this, SeleccionTipoPartido.class);
+            startActivity(intent);
+        });
     }
 }
