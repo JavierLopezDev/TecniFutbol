@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "376380296561",
+    "firebase_url": "https://tecnifutbol-3d1af-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "tecnifutbol-3d1af",
     "storage_bucket": "tecnifutbol-3d1af.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.dam.tecnifutbol"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "376380296561-0k531caoqp53bp78dhhbdbr9slb97743.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dam.tecnifutbol",
+            "certificate_hash": "d19cee473c94744a410d4e6729df591d4346fb57"
+          }
+        },
+        {
+          "client_id": "376380296561-plah95lhd3lvurjf49kpp4vjbbishvcp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAaAOWK80qo31uX8F5OCmUh49NzNP2YomE"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376380296561-plah95lhd3lvurjf49kpp4vjbbishvcp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
