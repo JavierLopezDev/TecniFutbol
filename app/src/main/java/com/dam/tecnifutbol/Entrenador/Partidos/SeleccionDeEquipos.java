@@ -1,10 +1,9 @@
-package com.dam.tecnifutbol.Entrenador;
+package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.dam.tecnifutbol.R;
@@ -20,13 +19,10 @@ public class SeleccionDeEquipos extends AppCompatActivity {
         tv_Editar.setBackgroundResource(R.drawable.boton);
         tv_Partido.setBackgroundResource(R.drawable.boton);
 
-        ImageButton ib_CrearEquipo=findViewById(R.id.imageButton_NuevoEquipo);
-        ib_CrearEquipo.setOnClickListener(v -> {
-            //Nos movemos a la pantalla de crear equipo
-            setContentView(R.layout.activity_crear_equipo);
-            Intent intent = new Intent(this, CrearEquipo.class);
+        tv_Partido.setOnClickListener(v -> {
+            //Nos movemos a la pantalla de login
+            Intent intent = new Intent(this, SeleccionTipoPartido.class);
             startActivity(intent);
         });
-
     }
 }

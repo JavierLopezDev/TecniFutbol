@@ -1,8 +1,10 @@
-package com.dam.tecnifutbol;
+package com.dam.tecnifutbol.Entrenador.Entrenamientos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.dam.tecnifutbol.R;
 
 public class PantallaEntrenamientos extends AppCompatActivity {
 

@@ -13,19 +13,22 @@
         android:theme="@style/Theme.TecniFutbol"
         tools:targetApi="31">
         <activity
-            android:name=".Entrenador.CrearEquipo"
+            android:name=".Entrenador.Partidos.SeleccionTipoPartido"
             android:exported="false" />
         <activity
-            android:name=".Entrenador.SeleccionDeEquipos"
+            android:name=".PantallaInicial"
+            android:exported="false" />
+        <activity
+            android:name=".Entrenador.Partidos.SeleccionDeEquipos"
             android:exported="false" />
         <activity
             android:name=".Entrenador.PantallaEntrenador"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginFirebase"
             android:exported="false" />
         <activity
-            android:name=".PantallaInicial"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

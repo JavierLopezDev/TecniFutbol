@@ -6,14 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.dam.tecnifutbol.Entrenador.SeleccionDeEquipos;
+import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
 
 public class PantallaInicial extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_inicial);
+        setContentView(R.layout.p_inicial);
         TextView etEntrenador = findViewById(R.id.et_entrenador);
         TextView etJugador = findViewById(R.id.et_jugador);
 
@@ -27,9 +27,8 @@ public class PantallaInicial extends AppCompatActivity {
 
         etEntrenador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
-             setContentView(R.layout.activity_seleccion_de_equipos);
-              Intent intent = new Intent(this, SeleccionDeEquipos.class);
-             startActivity(intent);
+            Intent intent = new Intent(this, PantallaEntrenador.class);
+            startActivity(intent);
         });
 
 
