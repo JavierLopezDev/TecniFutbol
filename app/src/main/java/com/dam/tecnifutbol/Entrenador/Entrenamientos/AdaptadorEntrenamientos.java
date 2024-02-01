@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol;
+package com.dam.tecnifutbol.Entrenador.Entrenamientos;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.dam.tecnifutbol.R;
 
 public class AdaptadorEntrenamientos extends RecyclerView.Adapter<AdaptadorEntrenamientos.ViewHolder> {
 

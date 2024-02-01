@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         database.execSQL("CREATE TABLE IF NOT EXISTS entrenamientos " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, tipoEjercicio TEXT, categoriaEdad TEXT, dificultad TEXT, " +
                 "duracion TEXT, material TEXT)");
+        insertarEntrenamientos();
     }
 
     /**
