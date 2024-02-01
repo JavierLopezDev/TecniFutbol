@@ -1,5 +1,6 @@
 package com.dam.tecnifutbol.Entrenador;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -20,6 +21,16 @@ public class PantallaEntrenador extends AppCompatActivity {
         tv_Entrenamientos.setBackgroundResource(R.drawable.boton);
         tv_Partidos.setBackgroundResource(R.drawable.boton);
 
+        tv_Entrenamientos.setOnClickListener(v -> {
+
+            //Intent intent = new Intent(this, SeleccionDeEquipos.class);
+            //startActivity(intent);
+        });
+        tv_Partidos.setOnClickListener(v -> {
+
+            Intent intent = new Intent(this, SeleccionDeEquipos.class);
+            startActivity(intent);
+        });
         //Cuando seleccione btn_Partidos me llevara a la actividad de seleccionDeEquipos
 
     }
