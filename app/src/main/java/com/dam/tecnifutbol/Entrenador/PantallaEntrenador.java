@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
+import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
 import com.dam.tecnifutbol.R;
 
 public class PantallaEntrenador extends AppCompatActivity {
@@ -23,8 +25,8 @@ public class PantallaEntrenador extends AppCompatActivity {
 
         tv_Entrenamientos.setOnClickListener(v -> {
 
-            //Intent intent = new Intent(this, SeleccionDeEquipos.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, PantallaEntrenamientos.class);
+            startActivity(intent);
         });
         tv_Partidos.setOnClickListener(v -> {
 
