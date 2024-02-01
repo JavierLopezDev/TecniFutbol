@@ -2,8 +2,11 @@ package com.dam.tecnifutbol;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.dam.tecnifutbol.Entrenador.SeleccionDeEquipos;
 
 public class PantallaInicial extends AppCompatActivity {
 
@@ -24,9 +27,9 @@ public class PantallaInicial extends AppCompatActivity {
 
         etEntrenador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
-            // setContentView(R.layout.activity_seleccion_de_equipos);
-            //  Intent intent = new Intent(this, SeleccionDeEquipos.class);
-            // startActivity(intent);
+             setContentView(R.layout.activity_seleccion_de_equipos);
+              Intent intent = new Intent(this, SeleccionDeEquipos.class);
+             startActivity(intent);
         });
 
 
