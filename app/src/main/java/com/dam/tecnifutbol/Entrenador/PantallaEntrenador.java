@@ -24,7 +24,6 @@ public class PantallaEntrenador extends AppCompatActivity {
         tv_Partidos.setBackgroundResource(R.drawable.boton);
 
         tv_Entrenamientos.setOnClickListener(v -> {
-
             Intent intent = new Intent(this, PantallaEntrenamientos.class);
             startActivity(intent);
         });
