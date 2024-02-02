@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="Entrenador"
+        android:textAllCaps="true"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,29 +21,33 @@
 
     <TextView
         android:id="@+id/tv_Entrenamientos"
-        android:layout_width="236dp"
-        android:layout_height="148dp"
-        android:layout_marginTop="108dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="64dp"
         android:gravity="center"
         android:text="Entrenamientos"
-        android:textSize="30dp"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_TituloEntrenador" />
 
     <TextView
         android:id="@+id/tv_Partidos"
-        android:layout_width="236dp"
-        android:layout_height="148dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         android:layout_marginTop="108dp"
         android:gravity="center"
         android:text="Partidos"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_Entrenamientos"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.036" />
 </androidx.constraintlayout.widget.ConstraintLayout>
