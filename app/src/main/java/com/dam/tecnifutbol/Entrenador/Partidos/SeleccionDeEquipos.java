@@ -24,5 +24,6 @@ public class SeleccionDeEquipos extends AppCompatActivity {
             Intent intent = new Intent(this, SeleccionTipoPartido.class);
             startActivity(intent);
         });
+
     }
 }

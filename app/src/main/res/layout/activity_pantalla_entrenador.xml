@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondodepantalla2"
     tools:context="com.dam.tecnifutbol.Entrenador.PantallaEntrenador">
 
     <TextView
         android:id="@+id/tv_TituloEntrenador"
         android:layout_width="221dp"
+        android:textColor="@android:color/white"
         android:layout_height="88dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
@@ -21,6 +23,7 @@
     <TextView
         android:id="@+id/tv_Entrenamientos"
         android:layout_width="236dp"
+        android:textColor="@android:color/white"
         android:layout_height="148dp"
         android:layout_marginTop="108dp"
         android:gravity="center"
@@ -37,6 +40,7 @@
         android:layout_height="148dp"
         android:layout_marginTop="108dp"
         android:gravity="center"
+        android:textColor="@android:color/white"
         android:text="Partidos"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
