@@ -11,25 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TecniFutbol"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:screenOrientation="portrait">
         <activity
             android:name=".Entrenador.Partidos.SeleccionTipoPartido"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".PantallaInicial"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".Entrenador.Partidos.SeleccionDeEquipos"
             android:exported="false" />
         <activity
             android:name=".Entrenador.PantallaEntrenador"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".LoginFirebase"
             android:exported="false" />
         <activity
             android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
