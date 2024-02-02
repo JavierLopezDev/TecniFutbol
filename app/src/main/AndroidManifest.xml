@@ -28,6 +28,9 @@
             android:name=".LoginFirebase"
             android:exported="false" />
         <activity
+            android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
