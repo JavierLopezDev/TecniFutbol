@@ -1,9 +1,13 @@
 package com.dam.tecnifutbol.Entrenador.Entrenamientos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
+import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
