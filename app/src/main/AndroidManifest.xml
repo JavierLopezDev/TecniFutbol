@@ -18,6 +18,8 @@
         <activity
             android:name=".Entrenador.Partidos.SeleccionTipoPartido"
             android:exported="false" />
+        <activity android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
+            android:exported="false" />
         <activity
             android:name=".PantallaInicial"
             android:exported="false" />
