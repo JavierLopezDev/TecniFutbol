@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import com.dam.tecnifutbol.R;
+import com.dam.tecnifutbol.Entrenador.Entrenamientos.InsertarEntrenamientos;
 
 public class MainActivity extends AppCompatActivity {
     public static SQLiteDatabase database;

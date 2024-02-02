@@ -11,7 +11,6 @@ import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PantallaEntrenamientos extends AppCompatActivity {
     private ArrayList<String> entrenamientos = new ArrayList<>();
@@ -22,7 +21,7 @@ public class PantallaEntrenamientos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.p_entrenamientos);
+        setContentView(R.layout.activity_pantalla_entrenamientos);
 
         obtenerEntrenamientos();
         iniciarRecyclerView();
