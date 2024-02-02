@@ -13,7 +13,7 @@ public class PantallaInicial extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.p_inicial);
+        setContentView(R.layout.activity_pantalla_inicial);
         TextView etEntrenador = findViewById(R.id.et_entrenador);
         TextView etJugador = findViewById(R.id.et_jugador);
 

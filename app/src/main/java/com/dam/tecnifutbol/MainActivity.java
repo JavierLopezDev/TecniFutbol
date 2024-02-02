@@ -25,8 +25,11 @@ public class MainActivity extends AppCompatActivity {
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, tipoEjercicio TEXT, categoriaEdad TEXT, dificultad TEXT, " +
                 "duracion TEXT, material TEXT)");
         insertarEntrenamientos();
-        
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        database.execSQL("CREATE TABLE IF NOT EXISTS equipos " +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, propietario TEXT, nombre TEXT, categoriaPartido TEXT, jugadores INTEGER)");
     }
 
     /**
