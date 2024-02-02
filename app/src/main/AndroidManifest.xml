@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TecniFutbol"
         tools:targetApi="31">
+        <activity android:name=".Entrenador.CrearEquipo"
+            android:exported="false" />
         <activity
             android:name=".Entrenador.Partidos.SeleccionTipoPartido"
             android:exported="false" />

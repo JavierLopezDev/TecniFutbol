@@ -18,11 +18,13 @@
         app:srcCompat="@drawable/equipo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="305dp"
         android:layout_height="370dp"
         android:background="@drawable/fondotextos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.637">
@@ -82,6 +84,60 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_nombreEquipo"
             app:layout_constraintVertical_bias="0.5" />
 
+        <TextView
+            android:id="@+id/tv_cantidadJugadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jugadores"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spn_categoriasInsertado"
+            app:layout_constraintVertical_bias="0.154" />
+
+        <Spinner
+            android:id="@+id/spn_cantidadJugadoresInsertado"
+            android:layout_width="250dp"
+            android:layout_height="33dp"
+            android:background="@drawable/edittext_border"
+            android:fadeScrollbars="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cantidadJugadores"
+            app:layout_constraintVertical_bias="0.206" />
+
+        <TextView
+            android:id="@+id/tv_SinNombre"
+            android:layout_width="254dp"
+            android:layout_height="22dp"
+            android:textColor="@color/design_default_color_error"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spn_cantidadJugadoresInsertado"
+            app:layout_constraintVertical_bias="0.5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_CrearEquipo"
+        android:layout_width="200dp"
+        android:layout_height="33dp"
+        android:background="@drawable/boton"
+        android:gravity="center"
+        android:text="CREAR"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.214" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
