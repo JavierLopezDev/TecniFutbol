@@ -32,7 +32,7 @@ public class LoginFirebase extends AppCompatActivity implements View.OnClickList
     TextView signOutButton;
     TextView tv_iniciarSesion;
     private static final int SIGN_IN = 123;
-    private FirebaseAuth mAuth;
+    public static FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
 
     @Override
