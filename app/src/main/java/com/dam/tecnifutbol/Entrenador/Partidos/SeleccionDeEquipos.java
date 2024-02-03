@@ -27,6 +27,11 @@ public class SeleccionDeEquipos extends AppCompatActivity {
             startActivity(intent);
 
         });
+        tv_Editar.setOnClickListener(v -> {
+            //Nos movemos a la pantalla de editar equipo
+            Intent intent = new Intent(this, EditarEquipo.class);
+            startActivity(intent);
+        });
 
         tv_Partido.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login

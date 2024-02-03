@@ -8,10 +8,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;
 
 public class MainActivity extends AppCompatActivity {
     public static SQLiteDatabase database;
+    public static String equipoSeleccionadoAEditar = "Prueba10";
+    public static int jugadorSeleccionadoAEditarOEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
         database.execSQL("CREATE TABLE IF NOT EXISTS equipos " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, propietario TEXT, nombre TEXT, categoriaPartido TEXT, jugadores INTEGER)");
+
+        database.execSQL("CREATE TABLE IF NOT EXISTS jugadores " +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, equipo TEXT, nombre TEXT, dorsal TEXT, posicion TEXT, peso TEXT, altura TEXT, fechaNacimiento DATE, " +
+                "piernaHabil TEXT, notas TEXT, disponible BOOLEAN)");
+
     }
 
     /**

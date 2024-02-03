@@ -9,16 +9,24 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.TecniFutbol"
-        tools:targetApi="31"
-        android:screenOrientation="portrait">
-        <activity android:name=".Entrenador.CrearEquipo"
+        tools:targetApi="31">
+        <activity
+            android:name=".Entrenador.Partidos.EditarOCrearJugador"
+            android:exported="false" />
+        <activity
+            android:name=".Entrenador.Partidos.EditarEquipo"
+            android:exported="false" />
+        <activity
+            android:name=".Entrenador.CrearEquipo"
             android:exported="false" />
         <activity
             android:name=".Entrenador.Partidos.SeleccionTipoPartido"
             android:exported="false" />
-        <activity android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
+        <activity
+            android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
             android:exported="false" />
         <activity
             android:name=".PantallaInicial"
