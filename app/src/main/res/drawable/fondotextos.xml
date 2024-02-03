@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#00171F"/> <!-- Color de fondo del botón -->
+            <corners android:radius="20dp"/> <!-- Radio para redondear las esquinas -->
+        </shape>
+    </item>
+    <item android:right="2dp" android:left="2dp" android:top="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/teal_200"/> <!-- Color del borde -->
+            <corners android:radius="20dp"/> <!-- Radio para redondear las esquinas del borde -->
+        </shape>
+    </item>
+</layer-list>

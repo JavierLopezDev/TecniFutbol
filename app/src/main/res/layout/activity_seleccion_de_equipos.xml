@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Entrenador.SeleccionDeEquipos">
+    tools:context=".Entrenador.Partidos.SeleccionDeEquipos">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="285dp"
-        android:layout_height="93dp"
+        android:layout_width="360dp"
+        android:layout_height="92dp"
         android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="Seleccione un equipo"
@@ -24,49 +24,49 @@
         android:id="@+id/imageButton_NuevoEquipo"
         android:layout_width="99dp"
         android:layout_height="89dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="464dp"
         android:background="@android:color/white"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786"
         app:srcCompat="@drawable/icono_mas" />
 
     <TextView
         android:id="@+id/tv_Editar"
-        android:layout_width="142dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="115dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="40dp"
-        android:textColor="@android:color/white"
         android:gravity="center"
         android:text="Editar"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_Partido"
-        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.968" />
 
     <TextView
         android:id="@+id/tv_Partido"
-        android:layout_width="142dp"
-        android:layout_height="81dp"
+        android:layout_width="115dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="40dp"
-        android:textColor="@android:color/white"
         android:gravity="center"
         android:text="Partido"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.964" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

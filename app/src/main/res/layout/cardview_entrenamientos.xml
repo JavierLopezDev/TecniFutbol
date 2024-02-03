@@ -15,7 +15,7 @@
             android:padding="8dp">
 
             <TextView
-                android:id="@+id/nombre"
+                android:id="@+id/nombreEntrenamiento"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -23,10 +23,11 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <ImageView
+            <!--<ImageView
+                android:id="@+id/imagenEntrenamiento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/ic_launcher_background"/>-->
 
         </LinearLayout>
 
