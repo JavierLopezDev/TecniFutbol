@@ -269,6 +269,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.609" />
 
+        <TextView
+            android:id="@+id/tv_cm"
+            android:layout_width="42dp"
+            android:layout_height="13dp"
+            android:text="(cm)"
+            android:textSize="10dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_alturaJugadorInsertado2"
+            tools:layout_editor_absoluteY="185dp" />
+
+        <TextView
+            android:id="@+id/tv_kg"
+            android:layout_width="42dp"
+            android:layout_height="13dp"
+            android:text="(kg)"
+            android:textSize="10dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_pesoJugadorInsertado"
+            tools:layout_editor_absoluteY="184dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -286,5 +304,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="0.214" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="88dp"
+        android:layout_height="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/jugadores_de_futbol" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
