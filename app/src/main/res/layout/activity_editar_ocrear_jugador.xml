@@ -275,8 +275,12 @@
             android:layout_height="13dp"
             android:text="(cm)"
             android:textSize="10dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_alturaJugadorInsertado2"
-            tools:layout_editor_absoluteY="185dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38" />
 
         <TextView
             android:id="@+id/tv_kg"
@@ -284,8 +288,12 @@
             android:layout_height="13dp"
             android:text="(kg)"
             android:textSize="10dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_pesoJugadorInsertado"
-            tools:layout_editor_absoluteY="184dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.395"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
