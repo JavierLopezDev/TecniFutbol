@@ -10,7 +10,7 @@ import com.dam.tecnifutbol.R;
 
 public class SeleccionTipoPartido extends AppCompatActivity {
 
-    TextView tv_pEntrenamiento, tv_pVsEquipo, tv_back;
+    TextView tv_pEntrenamiento, tv_pVsEquipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,6 @@ public class SeleccionTipoPartido extends AppCompatActivity {
 
         tv_pEntrenamiento = findViewById(R.id.tv_pEntrenamiento);
         tv_pVsEquipo = findViewById(R.id.tv_pVsEquipo);
-        tv_back = findViewById(R.id.tv_back);
 
         tv_pEntrenamiento.setOnClickListener(view -> {
             /*Intent intent = new Intent(SeleccionTipoPartido.this, {NombreClase}.class);
@@ -29,11 +28,6 @@ public class SeleccionTipoPartido extends AppCompatActivity {
         tv_pVsEquipo.setOnClickListener(view -> {
             /*Intent intent = new Intent(SeleccionTipoPartido.this, {NombreClase}.class);
             startActivity(intent);*/
-        });
-
-        tv_back.setOnClickListener(view -> {
-            Intent intent = new Intent(SeleccionTipoPartido.this, SeleccionDeEquipos.class);
-            startActivity(intent);
         });
 
     }
