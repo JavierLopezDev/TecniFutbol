@@ -13,7 +13,7 @@ import com.dam.tecnifutbol.R;
 import java.util.ArrayList;
 
 public class PantallaEntrenamientos extends AppCompatActivity {
-    private ArrayList<EntrenamientoConImagen> entrenamientos = new ArrayList<>();
+    private ArrayList<Entrenamiento> entrenamientos = new ArrayList<>();
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter myAdapter;
@@ -35,8 +35,16 @@ public class PantallaEntrenamientos extends AppCompatActivity {
 
         while (cursor.moveToNext()) {
             String nombre = cursor.getString(1);
+            String descripcion = cursor.getString(2);
+            String tipoEjercicio = cursor.getString(3);
+            String categoriaEdad = cursor.getString(4);
+            String dificultad = cursor.getString(5);
+            String duracion = cursor.getString(6);
+            String material = cursor.getString(7);
             int imagen = cursor.getInt(8);
-            entrenamientos.add(new EntrenamientoConImagen(nombre, imagen));
+            String video = cursor.getString(9);
+
+            entrenamientos.add(new Entrenamiento(nombre, descripcion, categoriaEdad, dificultad, duracion, material, tipoEjercicio, imagen, video));
         }
 
         cursor.close();

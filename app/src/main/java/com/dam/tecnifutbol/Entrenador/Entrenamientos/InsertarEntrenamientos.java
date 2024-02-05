@@ -1,5 +1,7 @@
 package com.dam.tecnifutbol.Entrenador.Entrenamientos;
 
+import android.net.Uri;
+
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
@@ -8,14 +10,16 @@ public class InsertarEntrenamientos {
      * Inserta en la BD los entrenamientos de la categoría de edad de menos de 8 años.
      */
     public static void insertarEntrenamientosDeMenos8Años() {
-        MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen) " +
+        MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen, video) " +
                 "VALUES ('Despejes orientados', " +
                 "'Los defensas se posicionan en sus respectivas demarcaciones. " +
                 "Se colocan cerca del centro del campo 3 ó 4 porterías pequeñas. " +
                 "Dos o tres jugadores realizan envíos largos al área desde posiciones de medio campo. " +
                 "Los defensas tratarán de despejar dirigiendo el balón hacia cualquiera de las porterías" +
                 " pequeñas con la intención de introducir en balón en éstas.', " +
-                "'Defensa', 'Menos de 8 años', 'Baja', '10 minutos', 'Conos, 3 balones, 5-24 jugadores', " + R.drawable.entrenamiento_despejes_orientados + ")");
+                "'Defensa', 'Menos de 8 años', 'Baja', '10 minutos', 'Conos, 3 balones, 5-24 jugadores', " +
+                R.drawable.entrenamiento_despejes_orientados + ", " +
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_despejes_orientados + "')");
         MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen) " +
                 "VALUES ('Porteros en diagonal', " +
                 "'2 porteros se colocan en diagonal sobre un cuadrado formado por pivotes. " +
