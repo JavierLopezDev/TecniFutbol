@@ -4,29 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Entrenador.Partidos.EditarEquipo"
-    android:background="@drawable/fondodepantalla2">
+    android:background="@drawable/fondodepantalla2"
+    tools:context=".Entrenador.Partidos.EditarEquipo">
 
     <ImageButton
         android:id="@+id/imageButton_NuevoJugador"
-        android:layout_width="56dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="464dp"
-        android:background="@android:color/white"
+        android:layout_width="46dp"
+        android:layout_height="47dp"
+        android:background="@drawable/icono_mas_negro"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_eliminarJugador"
-        app:layout_constraintHorizontal_bias="0.552"
-        app:layout_constraintStart_toEndOf="@+id/tv_editarJugador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928"
-        app:srcCompat="@drawable/icono_mas" />
+        app:layout_constraintVertical_bias="0.983" />
 
     <TextView
         android:id="@+id/tv_eliminarJugador"
         android:layout_width="100dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/boton"
         android:gravity="center"
         android:text="ELIMINAR"
@@ -34,7 +32,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -52,7 +50,7 @@
         android:id="@+id/tv_editarJugador"
         android:layout_width="100dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/boton"
         android:gravity="center"
         android:text="EDITAR"
@@ -65,8 +63,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_jugadores"
-        android:layout_width="367dp"
-        android:layout_height="626dp"
+        android:layout_width="363dp"
+        android:layout_height="596dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_eliminarJugador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
