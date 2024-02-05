@@ -5,10 +5,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 public class EditarEquipo extends AppCompatActivity implements View.OnClickListener {
 
     ArrayList<Jugador> listaJugadores;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,19 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
             consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
             ListaJugadoresAdapter adapter2 = new ListaJugadoresAdapter(listaJugadores);
             recyclerViewJugadores.setAdapter(adapter2);
+        });
+        tv_EditarJugador.setOnClickListener(v -> {
+            //Nos movemos a la pantalla de editar jugador
+
+            Intent intent = new Intent(this, EditarOCrearJugador.class);
+            startActivity(intent);
+        });
+        ImageButton ibCrearJugador = findViewById(R.id.imageButton_NuevoJugador);
+        ibCrearJugador.setOnClickListener(v -> {
+            //Nos movemos a la pantalla de crear jugador
+            MainActivity.jugadorSeleccionadoAEditar = null;
+            Intent intent = new Intent(this, EditarOCrearJugador.class);
+            startActivity(intent);
         });
 
     }
@@ -77,6 +93,12 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
             Jugador jugador = new Jugador(id, equipo, nombre, dorsal, posicion, peso, altura, fechaNacimiento, piernaHabil, notas, disponibleBoolean);
             listaJugadores.add(jugador);
         }
+        //Odernar la lista de menor a mayor por su dorsal
+        listaJugadores.sort((o1, o2) -> {
+            int dorsal1 = Integer.parseInt(o1.getDorsal());
+            int dorsal2 = Integer.parseInt(o2.getDorsal());
+            return Integer.compare(dorsal1, dorsal2);
+        });
         }
     }
     public void eliminarJugador() {

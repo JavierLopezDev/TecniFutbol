@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -89,12 +90,11 @@ public class CrearEquipo extends AppCompatActivity implements AdapterView.OnItem
     }
 
     public void insertarJugadoresEjemplo(String nombreEquipo, int cantidadJugadores){
-        Date fechaNacimientoEjemplo = new Date(2000, 1, 1);
-
+        String fechaNacimientoEjemploFormateada = "01/01/2000";
 
         for (int i = 1; i <= cantidadJugadores; i++) {
             MainActivity.database.execSQL("INSERT INTO jugadores (equipo, nombre, dorsal, posicion, peso, altura, fechaNacimiento, piernaHabil, notas, disponible) " +
-                    "VALUES ('"+nombreEquipo+"', 'Jugador"+i+"', '"+i+"', 'Portero', '60', '170', '"+fechaNacimientoEjemplo+"', 'Derecha', 'Sin notas', 1)");
+                    "VALUES ('"+nombreEquipo+"', 'Jugador"+i+"', '"+i+"', 'Portero', '60', '170', '"+fechaNacimientoEjemploFormateada+"', 'Derecha', 'Sin notas', 1)");
         }
 
 

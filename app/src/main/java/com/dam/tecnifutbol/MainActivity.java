@@ -13,8 +13,10 @@ import com.dam.tecnifutbol.R;
 
 public class MainActivity extends AppCompatActivity {
     public static SQLiteDatabase database;
-    public static String equipoSeleccionadoAEditar = "Prueba10";
+    public static String equipoSeleccionadoAEditar = "Prueba12";
     public static int jugadorSeleccionadoAEditarOEliminar;
+    public static String fechaNacJugadorInsertado;
+    public static Jugador jugadorSeleccionadoAEditar = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

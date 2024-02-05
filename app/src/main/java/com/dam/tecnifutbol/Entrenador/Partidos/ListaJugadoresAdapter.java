@@ -106,7 +106,7 @@ public class ListaJugadoresAdapter extends RecyclerView.Adapter<ListaJugadoresAd
                         restaurarEstiloJugador(ultimoLinearSeleccionado);
                     }
                     ultimoLinearSeleccionado = linearLayout;
-                    System.out.println("Jugador seleccionado a editar: " + localDataSet.get(posicion).getId());
+                    MainActivity.jugadorSeleccionadoAEditar= localDataSet.get(posicion);
                     MainActivity.jugadorSeleccionadoAEditarOEliminar = localDataSet.get(posicion).getId();
                     cambiarEstilojugadorSeleccionado(linearLayout);
                 }
