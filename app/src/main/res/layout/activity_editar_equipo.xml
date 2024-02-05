@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Entrenador.Partidos.EditarEquipo">
+    tools:context=".Entrenador.Partidos.EditarEquipo"
+    android:background="@drawable/fondodepantalla2">
 
     <ImageButton
         android:id="@+id/imageButton_NuevoJugador"
@@ -42,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="JUGADORES"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
