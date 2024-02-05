@@ -59,6 +59,11 @@ public class SeleccionDeEquipos extends AppCompatActivity {
                 Toast.makeText(this, "Por favor, seleccione exactamente 1 equipos para el editarlo", Toast.LENGTH_SHORT).show();
             }
         });
+        tv_Editar.setOnClickListener(v -> {
+            //Nos movemos a la pantalla de editar equipo
+            Intent intent = new Intent(this, EditarEquipo.class);
+            startActivity(intent);
+        });
 
         tv_Partido.setOnClickListener(v -> {
             List<Equipo> equiposSeleccionados = adapter.getEquiposSeleccionados();
