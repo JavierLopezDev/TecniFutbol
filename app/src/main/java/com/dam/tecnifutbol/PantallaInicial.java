@@ -17,13 +17,6 @@ public class PantallaInicial extends AppCompatActivity {
         TextView etEntrenador = findViewById(R.id.et_entrenador);
         TextView etJugador = findViewById(R.id.et_jugador);
 
-        //Configuración botones
-        etEntrenador.setTextSize(30);
-        etJugador.setTextSize(30);
-        etEntrenador.setTextColor(getResources().getColor(R.color.white));
-        etJugador.setTextColor(getResources().getColor(R.color.white));
-        etEntrenador.setBackgroundResource(R.drawable.boton);
-        etJugador.setBackgroundResource(R.drawable.boton);
 
         etEntrenador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
