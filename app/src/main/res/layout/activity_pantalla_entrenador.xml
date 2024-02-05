@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondodepantalla2"
     tools:context="com.dam.tecnifutbol.Entrenador.PantallaEntrenador">
 
     <TextView
         android:id="@+id/tv_TituloEntrenador"
-        android:layout_width="221dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="316dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="Entrenador"
+        android:text="seleccione una opción"
+        android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,14 +27,14 @@
         android:id="@+id/tv_Entrenamientos"
         android:layout_width="250dp"
         android:layout_height="200dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="Entrenamientos"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="28sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_TituloEntrenador" />
 
@@ -38,7 +42,6 @@
         android:id="@+id/tv_Partidos"
         android:layout_width="250dp"
         android:layout_height="200dp"
-        android:layout_marginTop="108dp"
         android:gravity="center"
         android:text="Partidos"
         android:textAllCaps="true"
@@ -46,8 +49,8 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Entrenamientos"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
 </androidx.constraintlayout.widget.ConstraintLayout>

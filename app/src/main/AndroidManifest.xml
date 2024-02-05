@@ -9,40 +9,49 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.TecniFutbol"
         tools:targetApi="31">
         <activity
             android:name=".Entrenador.Partidos.EditarOCrearJugador"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Entrenador.Partidos.EditarEquipo"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Entrenador.CrearEquipo"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".Entrenador.Partidos.SeleccionTipoPartido"
-            android:exported="false" />
-        <activity
-            android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".PantallaInicial"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Entrenador.Partidos.SeleccionDeEquipos"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Entrenador.PantallaEntrenador"
-            android:exported="false" />
-        <activity
-            android:name=".LoginFirebase"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
