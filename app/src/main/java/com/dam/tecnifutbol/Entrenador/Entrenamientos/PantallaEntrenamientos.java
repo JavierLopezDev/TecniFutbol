@@ -11,7 +11,6 @@ import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PantallaEntrenamientos extends AppCompatActivity {
     private ArrayList<String> entrenamientos = new ArrayList<>();

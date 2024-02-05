@@ -30,12 +30,13 @@ public class AdaptadorEntrenamientos extends RecyclerView.Adapter<AdaptadorEntre
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        String nombreEntrenamiento = entrenamientos.get(position);
+        holder.nombreEntrenamiento.setText(nombreEntrenamiento);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return entrenamientos.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
