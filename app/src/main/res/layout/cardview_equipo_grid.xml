@@ -18,14 +18,14 @@
             android:padding="8dp">
 
             <ImageView
-                android:id="@+id/imagenEntrenamiento"
+                android:id="@+id/imagenEquipo"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_launcher_background"/>
 
             <TextView
-                android:id="@+id/nombreEntrenamiento"
+                android:id="@+id/nombreEquipo"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -35,12 +35,12 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/categoriaEntrenamiento"
+                android:id="@+id/categoriaEquipo"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Categoria entrenamiento"
+                android:text="Categoria equipo"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 

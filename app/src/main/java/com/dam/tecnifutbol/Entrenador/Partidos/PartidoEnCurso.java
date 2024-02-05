@@ -8,21 +8,19 @@ import android.widget.TextView;
 
 import com.dam.tecnifutbol.R;
 
-public class Partido extends AppCompatActivity {
+public class PartidoEnCurso extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_partido);
-
+        setContentView(R.layout.activity_partido_en_curso);
         Intent intent = getIntent();
         Equipo equipo1 = (Equipo) intent.getSerializableExtra("equipo1");
         Equipo equipo2 = (Equipo) intent.getSerializableExtra("equipo2");
-        TextView nombreEqquipo1=findViewById(R.id.tv_NombreEquipo1);
-        TextView nombreEqquipo2=findViewById(R.id.tv_NombreEquipo2);
+        TextView nombreEqquipo1=findViewById(R.id.tv);
+        TextView nombreEqquipo2=findViewById(R.id.tv2);
 
         nombreEqquipo1.setText(equipo1.getNombre());
         nombreEqquipo2.setText(equipo2.getNombre());
-
     }
 }

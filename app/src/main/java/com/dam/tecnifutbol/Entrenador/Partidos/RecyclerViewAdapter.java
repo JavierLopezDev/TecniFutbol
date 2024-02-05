@@ -72,9 +72,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public EquipoViewHolder(@NonNull View itemView) {
             super(itemView);
-            imagenEntrenamiento = itemView.findViewById(R.id.imagenEntrenamiento);
-            nombreEntrenamiento = itemView.findViewById(R.id.nombreEntrenamiento);
-            categoriaEntrenamiento = itemView.findViewById(R.id.categoriaEntrenamiento);
+            imagenEntrenamiento = itemView.findViewById(R.id.imagenEquipo);
+            nombreEntrenamiento = itemView.findViewById(R.id.nombreEquipo);
+            categoriaEntrenamiento = itemView.findViewById(R.id.categoriaEquipo);
         }
 
         public void bind(Equipo equipo) {

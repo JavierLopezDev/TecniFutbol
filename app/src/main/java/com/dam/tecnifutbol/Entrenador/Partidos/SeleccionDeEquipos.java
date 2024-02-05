@@ -51,25 +51,21 @@ public class SeleccionDeEquipos extends AppCompatActivity {
             List<Equipo> equiposSeleccionados = adapter.getEquiposSeleccionados();
 
             if (equiposSeleccionados.size() ==1) {
-                Intent intent = new Intent(this, Partido.class);
+                Intent intent = new Intent(this, EditarEquipo.class);
                 intent.putExtra("equipo1", equiposSeleccionados.get(0));
                 startActivity(intent);
             } else {
-                // Notificar al usuario que debe seleccionar exactamente 2 equipos
+                // Notificar al usuario que debe seleccionar exactamente 1 equipos
                 Toast.makeText(this, "Por favor, seleccione exactamente 1 equipos para el editarlo", Toast.LENGTH_SHORT).show();
             }
         });
-        tv_Editar.setOnClickListener(v -> {
-            //Nos movemos a la pantalla de editar equipo
-            Intent intent = new Intent(this, EditarEquipo.class);
-            startActivity(intent);
-        });
+
 
         tv_Partido.setOnClickListener(v -> {
             List<Equipo> equiposSeleccionados = adapter.getEquiposSeleccionados();
 
             if (equiposSeleccionados.size() == 2) {
-                Intent intent = new Intent(this, Partido.class);
+                Intent intent = new Intent(this, PartidoEnCurso.class);
                 intent.putExtra("equipo1", equiposSeleccionados.get(0));
                 intent.putExtra("equipo2", equiposSeleccionados.get(1));
                 startActivity(intent);
