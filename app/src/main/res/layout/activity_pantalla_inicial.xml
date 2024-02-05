@@ -7,6 +7,7 @@
     android:background="@drawable/fondodepantalla2">
 
     <LinearLayout
+        android:id="@+id/ly_entrenador"
         android:layout_width="266dp"
         android:layout_height="248dp"
         android:background="@drawable/boton"
@@ -14,10 +15,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25">
+        app:layout_constraintVertical_bias="0.178">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -29,7 +30,6 @@
             android:id="@+id/et_entrenador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/onest"
             android:gravity="center"
@@ -40,18 +40,44 @@
             android:textSize="30sp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/et_jugador"
+    <LinearLayout
+        android:id="@+id/ly_jugador"
         android:layout_width="266dp"
         android:layout_height="248dp"
-        android:gravity="center"
-        android:text="JUGADOR"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
+        app:layout_constraintVertical_bias="0.811"
+        android:background="@drawable/boton"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="99dp"
+            android:background="@drawable/jugadores_de_futbol" />
+
+        <TextView
+            android:id="@+id/et_jugador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="JUGADOR"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.795"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/onest"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
