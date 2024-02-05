@@ -73,9 +73,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Creación de la base de datos y la tabla entrenamientos
         database = openOrCreateDatabase("TecniFutbol", MODE_PRIVATE, null);
+        database.execSQL("DROP TABLE IF EXISTS entrenamientos");
         database.execSQL("CREATE TABLE IF NOT EXISTS entrenamientos " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, tipoEjercicio TEXT, categoriaEdad TEXT, dificultad TEXT, " +
-                "duracion TEXT, material TEXT)");
+                "duracion TEXT, material TEXT, imagen BLOB)");
         insertarEntrenamientos();
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);

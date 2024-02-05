@@ -13,7 +13,7 @@ import com.dam.tecnifutbol.R;
 import java.util.ArrayList;
 
 public class PantallaEntrenamientos extends AppCompatActivity {
-    private ArrayList<String> entrenamientos = new ArrayList<>();
+    private ArrayList<EntrenamientoConImagen> entrenamientos = new ArrayList<>();
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter myAdapter;
@@ -34,14 +34,17 @@ public class PantallaEntrenamientos extends AppCompatActivity {
         Cursor cursor = MainActivity.database.rawQuery("SELECT * FROM entrenamientos", null);
 
         while (cursor.moveToNext()) {
-            String nombreEntrenamiento = cursor.getString(1);
-            //String imagenEntrenamiento = cursor.getString(2);
-            entrenamientos.add(nombreEntrenamiento);
+            String nombre = cursor.getString(1);
+            int imagen = cursor.getInt(8);
+            entrenamientos.add(new EntrenamientoConImagen(nombre, imagen));
         }
 
         cursor.close();
     }
 
+    /**
+     * Método que inicia el RecyclerView para mostrar los entrenamientos.
+     */
     private void iniciarRecyclerView() {
         recyclerView = findViewById(R.id.recyclerViewEntrenamientos);
         recyclerView.setHasFixedSize(true);

@@ -23,11 +23,11 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <!--<ImageView
+            <ImageView
                 android:id="@+id/imagenEntrenamiento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background"/>-->
+                android:src="@drawable/entrenamiento_despejes_orientados"/>
 
         </LinearLayout>
 
