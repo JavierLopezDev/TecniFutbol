@@ -34,7 +34,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SQLiteDatabase database;
-    public static String equipoSeleccionadoAEditar = "Prueba12";
+    public static String equipoSeleccionadoAEditar = "";
     public static int jugadorSeleccionadoAEditarOEliminar;
     public static String fechaNacJugadorInsertado;
     public static Jugador jugadorSeleccionadoAEditar = null;

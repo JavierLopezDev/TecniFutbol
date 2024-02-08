@@ -1,6 +1,5 @@
 package com.dam.tecnifutbol.Entrenador.Entrenamientos;
 
-import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,7 @@ public class AdaptadorEntrenamientos extends RecyclerView.Adapter<AdaptadorEntre
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_entrenamientos, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_seleccion_equipo, parent, false);
         return new AdaptadorEntrenamientos.ViewHolder(view);
     }
 

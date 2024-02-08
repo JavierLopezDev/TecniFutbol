@@ -4,28 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondodepantalla2"
     tools:context=".Entrenador.Partidos.SeleccionDeEquipos">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="360dp"
-        android:layout_height="92dp"
+        android:textColor="@android:color/white"
+        android:layout_width="350dp"
+        android:layout_height="64dp"
         android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="Seleccione un equipo"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton_NuevoEquipo"
         android:layout_width="99dp"
+        android:background="@android:color/transparent"
         android:layout_height="89dp"
         android:layout_marginTop="464dp"
-        android:background="@android:color/white"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,5 +69,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.964" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEquipos"
+        android:layout_width="400dp"
+        android:background="@android:color/transparent"
+        android:layout_height="486dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
