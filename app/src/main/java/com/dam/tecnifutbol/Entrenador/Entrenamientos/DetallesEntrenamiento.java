@@ -2,6 +2,7 @@ package com.dam.tecnifutbol.Entrenador.Entrenamientos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -45,5 +46,7 @@ public class DetallesEntrenamiento extends AppCompatActivity {
         materialEntrenamiento.setText(MainActivity.materialesEntrenamiento);
         tipoEntrenamiento.setText(MainActivity.tipoEntrenamiento);
         videoView.setVideoPath(MainActivity.videoEntrenamiento);
+        videoView.setOnPreparedListener(mp -> mp.setLooping(true));
+        videoView.start();
     }
 }

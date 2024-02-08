@@ -49,6 +49,17 @@ public class AdaptadorEntrenamientos extends RecyclerView.Adapter<AdaptadorEntre
 
                 Intent intent = new Intent(view.getContext(), DetallesEntrenamiento.class);
                 view.getContext().startActivity(intent);
+
+                /*Intent intent = new Intent(view.getContext(), DetallesEntrenamiento.class);
+                intent.putExtra("nombreEntrenamiento", entrenamiento.getNombre());
+                intent.putExtra("descripcionEntrenamiento", entrenamiento.getDescripcion());
+                intent.putExtra("edadesEntrenamiento", entrenamiento.getEdadesCategoria());
+                intent.putExtra("dificultadEntrenamiento", entrenamiento.getDificultad());
+                intent.putExtra("duracionEntrenamiento", entrenamiento.getDuracion());
+                intent.putExtra("materialesEntrenamiento", entrenamiento.getMateriales());
+                intent.putExtra("tipoEntrenamiento", entrenamiento.getTipo());
+                intent.putExtra("videoEntrenamiento", entrenamiento.getVideo());
+                view.getContext().startActivity(intent);*/
             }
         });
     }
