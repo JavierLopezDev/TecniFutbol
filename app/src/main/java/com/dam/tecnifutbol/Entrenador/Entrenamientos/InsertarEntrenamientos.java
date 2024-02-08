@@ -136,7 +136,7 @@ public class InsertarEntrenamientos {
                 "X2 finaliza la acción con disparo a puerta', " +
                 "'Saque de banda', '11 a 14 años, Más de 18 años', 'Alta', '15 minutos', '1 balón, 1 portería, 3-20 jugadores', " +
                 R.drawable.entrenamiento_saque_de_banda_2 + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_saque_de_banda_2 + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_saque_de_banda_2 + "')");
         MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen, video)" +
                 " VALUES ('Juego estrategia de córner', " +
                 "'Se divide a la plantilla en 3 equipos y se sitúan 4 jugadores para sacar córners. " +
@@ -146,7 +146,7 @@ public class InsertarEntrenamientos {
                 "Se van sumando los goles conseguidos por cada equipo', " +
                 "'Corners', '11 a 14 años, Más de 18 años', 'Media', '25 minutos', 'Petos, 4 balones, 2 porterías, 13-24 jugadores', " +
                 R.drawable.entrenamiento_juego_estrategia_de_corner + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_juego_estrategia_de_corner + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_juego_estrategia_de_corner + "')");
         MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen, video)" +
                 " VALUES ('Partido 6 porterías', " +
                 "'Dividir a la plantilla en 2 equipos. " +
@@ -154,7 +154,7 @@ public class InsertarEntrenamientos {
                 "El gol se conseguirá introduciendo el balón en cualquiera de las 3 porterías', " +
                 "'Global', '11 a 14 años', 'Media', '35 minutos', 'Pivotes, Petos, 1 balón, 6 porterías, 12-20 jugadores', " +
                 R.drawable.entrenamiento_partido_6_porterias + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_partido_6_porterias + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_partido_6_porterias + "')");
     }
 
     /**
@@ -169,7 +169,7 @@ public class InsertarEntrenamientos {
                 "Posteriormente se cambian las funciones', " +
                 "'Defensa', '14 a 18 años', 'Alta', '20 minutos', 'Pivotes, Petos, 1 balón, 3-24 jugadores', " +
                 R.drawable.entrenamiento_defender_el_triangulo + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_defender_el_triangulo + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_defender_el_triangulo + "')");
         MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen, video) " +
                 "VALUES ('Dinámica de cambios de orientación', " +
                 "'Se divide el terreno de juego en 3 zonas (2 bandas y zona central). " +
@@ -177,7 +177,7 @@ public class InsertarEntrenamientos {
                 "Los jugadores de banda tras realizar la combinación en corto realizan un sprint hasta la otra zona de campo de su propia banda', " +
                 "'Orientación, Pase', '14 a 18 años', 'Media', '20 minutos', 'Pivotes, 2 balones, 6-24 jugadores', " +
                 R.drawable.entrenamiento_dinamica_de_cambios_de_orientacion + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_dinamica_de_cambios_de_orientacion + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_dinamica_de_cambios_de_orientacion + "')");
         MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen, video) " +
                 "VALUES ('Velocidad de reacción, reflejos y lateralidad', " +
                 "'El portero abre con la mano a un lateral. " +
@@ -185,7 +185,7 @@ public class InsertarEntrenamientos {
                 "Un segundo jugador remata de cerca', " +
                 "'Porteros, Tiro, Pase', '14 a 18 años', 'Media', '10 minutos', '1 balón, 1 portería, 3 jugadores, 1 portero', " +
                 R.drawable.entrenamiento_velocidad_de_reaccion_reflejos_lateralidad + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_velocidad_de_reaccion_reflejos_lateralidad + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_velocidad_de_reaccion_reflejos_lateralidad + "')");
         MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen, video)" +
                 " VALUES ('Finalización desde fuera del área', " +
                 "'Cambio de orientación mediante circulación de balón entre tres centrocampistas. " +
@@ -193,7 +193,7 @@ public class InsertarEntrenamientos {
                 "El medio que inició la jugada realiza una dejada hacia atrás para que el medio centro finalice con tiro lejano la acción', " +
                 "'Pase, Tiro', '14 a 18 años', 'Media', '25 minutos', 'Pivotes, 1 balón, 1 portería, 3-24 jugadores', " +
                 R.drawable.entrenamiento_finalizacion_desde_fuera_del_area + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_finalizacion_desde_fuera_del_area + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_finalizacion_desde_fuera_del_area + "')");
         MainActivity.database.execSQL("INSERT INTO entrenamientos (nombre, descripcion, tipoEjercicio, categoriaEdad, dificultad, duracion, material, imagen, video)" +
                 " VALUES ('Superioridad 2x1 y finalización por banda', " +
                 "'Se delimitan dos cuadros en banda donde se juegan posesiones 2x1 apoyados por un medio centro que sirve de enlace entre ambas. " +
@@ -201,7 +201,7 @@ public class InsertarEntrenamientos {
                 "Si se consigue gol siguen defendiendo los mismos jugadores, sino se rotan las posiciones', " +
                 "'Superioridad', '14 a 18 años, Más de 18 años', 'Alta', '25 minutos', 'Pivotes, Petos, 1 balón, 1 porterías, 10-24 jugadores', " +
                 R.drawable.entrenamiento_superioridad_2x1_finalizacion_por_banda + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_superioridad_2x1_finalizacion_por_banda + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_superioridad_2x1_finalizacion_por_banda + "')");
     }
 
     /**
@@ -216,7 +216,7 @@ public class InsertarEntrenamientos {
                 "Cada pareja hace una vez de defensores y otra de atacantes', " +
                 "'Cabeza, Pase, Velocida', 'Más de 18 años', 'Alta', '15 minutos', 'Pivotes, Petos, 1 balón, 4-20 jugadores', " +
                 R.drawable.entrenamiento_juego_de_cabeza + ", " +
-                "'android.resource://com/dam/tecnifutbol/" + R.raw.entrenamiento_juego_de_cabeza + "')");
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.entrenamiento_juego_de_cabeza + "')");
         // Los demas entrenamientos de esta edad son tambien de las otras edades
     }
 }
