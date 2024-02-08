@@ -34,6 +34,15 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SQLiteDatabase database;
+    public static String nombreEntrenamiento;
+    public static String descripcionEntrenamiento;
+    public static String tipoEntrenamiento;
+    public static String edadesEntrenamiento;
+    public static String dificultadEntrenamiento;
+    public static String duracionEntrenamiento;
+    public static String materialesEntrenamiento;
+    public static String videoEntrenamiento;
+    public static String equipoSeleccionadoAEditar = "Prueba12";
     public static String equipoSeleccionadoAEditar = "";
     public static int jugadorSeleccionadoAEditarOEliminar;
     public static String fechaNacJugadorInsertado;
@@ -73,10 +82,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Creación de la base de datos y la tabla entrenamientos
         database = openOrCreateDatabase("TecniFutbol", MODE_PRIVATE, null);
+
+        // Esta linea se descomenta en caso de que cambieis los campos de la tabla entrenamientos
         database.execSQL("DROP TABLE IF EXISTS entrenamientos");
         database.execSQL("CREATE TABLE IF NOT EXISTS entrenamientos " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, tipoEjercicio TEXT, categoriaEdad TEXT, dificultad TEXT, " +
-                "duracion TEXT, material TEXT, imagen BLOB)");
+                "duracion TEXT, material TEXT, imagen BLOB, video TEXT)");
         insertarEntrenamientos();
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
