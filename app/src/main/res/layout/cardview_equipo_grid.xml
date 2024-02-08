@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="?android:attr/selectableItemBackground">
+    android:background="@android:color/transparent">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        app:cardBackgroundColor="@android:color/transparent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,7 +33,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Nombre entrenamiento"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <TextView
@@ -41,7 +43,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Categoria equipo"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
         </LinearLayout>

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
@@ -18,13 +19,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private List<Equipo> listaEquipos;
     private Context context;
-    private List<Equipo> equiposSeleccionados;
+    private Equipo equipoSeleccionado;
 
     public RecyclerViewAdapter(Context context, List<Equipo> listaEquipos) {
         this.context = context;
         this.listaEquipos = listaEquipos;
-        this.equiposSeleccionados = new ArrayList<>();
     }
+    public List<Equipo> getEquiposSeleccionados() {
+        List<Equipo> equiposSeleccionados = new ArrayList<>();
+        if (equipoSeleccionado != null) {
+            equiposSeleccionados.add(equipoSeleccionado);
+        }
+        return equiposSeleccionados;
+    }
+
 
     @NonNull
     @Override
@@ -40,11 +48,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         // Agregar el oyente de clic al ViewHolder
         holder.itemView.setOnClickListener(view -> {
-            // Alternar la selección del equipo
-            toggleSeleccion(equipo);
-            // Actualizar la apariencia del ViewHolder según la selección
-            actualizarApariencia(holder, equipo);
+            // Deseleccionar el equipo anterior (si hay alguno)
+            if (equipoSeleccionado != null) {
+                int index = listaEquipos.indexOf(equipoSeleccionado);
+                equipoSeleccionado = null;
+                notifyItemChanged(index);
+            }
+            // Seleccionar el nuevo equipo
+            equipoSeleccionado = equipo;
+            MainActivity.equipoSeleccionadoAEditar=equipoSeleccionado.getNombre();
+            // Notificar el cambio en la posición actual
+            notifyItemChanged(position);
         });
+
+        // Actualizar la apariencia del ViewHolder según la selección
+        if (equipo.equals(equipoSeleccionado)) {
+            holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.purple_700));
+
+        } else {
+            holder.itemView.setBackgroundColor(context.getResources().getColor(android.R.color.transparent));
+        }
     }
 
     @Override
@@ -57,11 +80,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         listaEquipos.clear();
         listaEquipos.addAll(nuevosEquipos);
         notifyDataSetChanged();
-    }
-
-    // Método para obtener los equipos seleccionados
-    public List<Equipo> getEquiposSeleccionados() {
-        return equiposSeleccionados;
     }
 
     public static class EquipoViewHolder extends RecyclerView.ViewHolder {
@@ -82,21 +100,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             categoriaEntrenamiento.setText(equipo.getCategoria());
             imagenEntrenamiento.setImageResource(R.drawable.equipo);
         }
-    }
 
-    private void toggleSeleccion(Equipo equipo) {
-        if (equiposSeleccionados.contains(equipo)) {
-            equiposSeleccionados.remove(equipo);
-        } else {
-            equiposSeleccionados.add(equipo);
-        }
-    }
-
-    private void actualizarApariencia(EquipoViewHolder holder, Equipo equipo) {
-        if (equiposSeleccionados.contains(equipo)) {
-            holder.itemView.setBackgroundColor(context.getResources().getColor(R.color.purple_700));
-        } else {
-            holder.itemView.setBackgroundColor(context.getResources().getColor(android.R.color.transparent));
-        }
     }
 }

@@ -31,6 +31,7 @@ public class SeleccionDeEquipos extends AppCompatActivity {
 
         adapter = new RecyclerViewAdapter(this, listaEquipos);
 
+
         TextView tv_Editar = findViewById(R.id.tv_Editar);
         TextView tv_Partido = findViewById(R.id.tv_Partido);
         tv_Editar.setBackgroundResource(R.drawable.boton);
@@ -40,6 +41,7 @@ public class SeleccionDeEquipos extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerViewEquipos);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setBackgroundResource(android.R.color.transparent);
         recyclerView.setAdapter(adapter);
 
         ib_CrearEquipo.setOnClickListener(v -> {
@@ -64,14 +66,12 @@ public class SeleccionDeEquipos extends AppCompatActivity {
         tv_Partido.setOnClickListener(v -> {
             List<Equipo> equiposSeleccionados = adapter.getEquiposSeleccionados();
 
-            if (equiposSeleccionados.size() == 2) {
-                Intent intent = new Intent(this, PartidoEnCurso.class);
+            if (equiposSeleccionados.size() == 1) {
+                Intent intent = new Intent(this, SeleccionTipoPartido.class);
                 intent.putExtra("equipo1", equiposSeleccionados.get(0));
-                intent.putExtra("equipo2", equiposSeleccionados.get(1));
                 startActivity(intent);
             } else {
-                // Notificar al usuario que debe seleccionar exactamente 2 equipos
-                Toast.makeText(this, "Por favor, seleccione exactamente 2 equipos para el partido", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Por favor, seleccione exactamente 1 equipos para el partido", Toast.LENGTH_SHORT).show();
             }
         });
     }
