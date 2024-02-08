@@ -2,6 +2,7 @@ package com.dam.tecnifutbol.Entrenador;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,18 +17,18 @@ public class PantallaEntrenador extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_entrenador);
-        TextView tv_Entrenamientos=findViewById(R.id.tv_Entrenamientos);
+
+        LinearLayout ly_Entrenamientos=findViewById(R.id.ly_entrenamientos);
+        LinearLayout ly_Partidos=findViewById(R.id.ly_partidos);
         TextView tv_Partidos=findViewById(R.id.tv_Partidos);
         TextView tvTituloEntrenador=findViewById(R.id.tv_TituloEntrenador);
 
-        tv_Entrenamientos.setBackgroundResource(R.drawable.boton);
-        tv_Partidos.setBackgroundResource(R.drawable.boton);
 
-        tv_Entrenamientos.setOnClickListener(v -> {
+        ly_Entrenamientos.setOnClickListener(v -> {
             Intent intent = new Intent(this, PantallaEntrenamientos.class);
             startActivity(intent);
         });
-        tv_Partidos.setOnClickListener(v -> {
+        ly_Partidos.setOnClickListener(v -> {
 
             Intent intent = new Intent(this, SeleccionDeEquipos.class);
             startActivity(intent);

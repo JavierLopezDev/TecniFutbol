@@ -2,6 +2,7 @@ package com.dam.tecnifutbol.Entrenador;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +12,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CrearEquipo extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -79,10 +83,24 @@ public class CrearEquipo extends AppCompatActivity implements AdapterView.OnItem
         MainActivity.database.execSQL("INSERT INTO equipos (propietario, nombre, categoriaPartido, jugadores) " +
                 "VALUES ('"+propietario+"', '"+nombreAInsertar+"', '"+categoria+"', "+cantidadJugadores+")");
 
+        insertarJugadoresEjemplo(nombreAInsertar, Integer.parseInt(cantidadJugadores));
         //Nos movemos a la pantalla de seleccionar equipos
-        finish();
+        Intent intent = new Intent(this, SeleccionDeEquipos.class);
+        startActivity(intent);
 
     }
+
+    public void insertarJugadoresEjemplo(String nombreEquipo, int cantidadJugadores){
+        String fechaNacimientoEjemploFormateada = "01/01/2000";
+
+        for (int i = 1; i <= cantidadJugadores; i++) {
+            MainActivity.database.execSQL("INSERT INTO jugadores (equipo, nombre, dorsal, posicion, peso, altura, fechaNacimiento, piernaHabil, notas, disponible) " +
+                    "VALUES ('"+nombreEquipo+"', 'Jugador"+i+"', '"+i+"', 'Portero', '60', '170', '"+fechaNacimientoEjemploFormateada+"', 'Derecha', 'Sin notas', 1)");
+        }
+
+
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

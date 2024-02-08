@@ -15,9 +15,9 @@ import com.dam.tecnifutbol.R;
 import java.util.ArrayList;
 
 public class AdaptadorEntrenamientos extends RecyclerView.Adapter<AdaptadorEntrenamientos.ViewHolder> {
-    private ArrayList<String> entrenamientos;
+    private ArrayList<EntrenamientoConImagen> entrenamientos;
 
-    public AdaptadorEntrenamientos(ArrayList<String> entrenamientos) {
+    public AdaptadorEntrenamientos(ArrayList<EntrenamientoConImagen> entrenamientos) {
         this.entrenamientos = entrenamientos;
     }
 
@@ -30,23 +30,25 @@ public class AdaptadorEntrenamientos extends RecyclerView.Adapter<AdaptadorEntre
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        EntrenamientoConImagen entrenamiento = entrenamientos.get(position);
+        holder.nombreEntrenamiento.setText(entrenamiento.getNombre());
+        holder.imagenEntrenamiento.setImageResource(entrenamiento.getImagen());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return entrenamientos.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView nombreEntrenamiento;
-        //private ImageView imagenEntrenamiento;
+        private ImageView imagenEntrenamiento;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nombreEntrenamiento = itemView.findViewById(R.id.nombreEntrenamiento);
-            //imagenEntrenamiento = itemView.findViewById(R.id.imagenEntrenamiento);
+            imagenEntrenamiento = itemView.findViewById(R.id.imagenEntrenamiento);
         }
     }
 }

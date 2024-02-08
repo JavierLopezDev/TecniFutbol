@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondodepantalla2"
+    tools:context=".Entrenador.Partidos.EditarOCrearJugador">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="305dp"
+        android:layout_height="499dp"
+        android:background="@drawable/fondotextos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573">
+
+        <EditText
+            android:id="@+id/et_notasJugadorInsertado"
+            android:layout_width="250dp"
+            android:layout_height="33dp"
+            android:width="250dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.774" />
+
+        <EditText
+            android:id="@+id/et_fechaNacJugadorInsertado"
+            android:layout_width="170dp"
+            android:layout_height="31dp"
+            android:width="250dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:hint="Selecione fecha de nacimiento"
+            android:inputType="text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.608" />
+
+        <TextView
+            android:id="@+id/tv_fechaNacJugadorInsertado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de nacimiento"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.194"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.53" />
+
+        <EditText
+            android:id="@+id/et_alturaJugadorInsertado"
+            android:layout_width="109dp"
+            android:layout_height="33dp"
+            android:width="250dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.857"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <TextView
+            android:id="@+id/tv_alturaJugadorInsertado2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Altura"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.73"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.362" />
+
+        <EditText
+            android:id="@+id/et_pesoJugadorInsertado"
+            android:layout_width="109dp"
+            android:layout_height="33dp"
+            android:width="250dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <Spinner
+            android:id="@+id/spn_posicionJugadorInsertado"
+            android:layout_width="135dp"
+            android:layout_height="32dp"
+            android:background="@drawable/edittext_border"
+            android:fadeScrollbars="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.823"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dorsalJugador"
+            app:layout_constraintVertical_bias="0.029" />
+
+        <TextView
+            android:id="@+id/tv_dorsalJugador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dorsal"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.105"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.194" />
+
+        <TextView
+            android:id="@+id/tv_nombreEquipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.033" />
+
+        <Spinner
+            android:id="@+id/spn_dorsalJugadorInsertado"
+            android:layout_width="60dp"
+            android:layout_height="33dp"
+            android:background="@drawable/edittext_border"
+            android:fadeScrollbars="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dorsalJugador"
+            app:layout_constraintVertical_bias="0.029" />
+
+        <EditText
+            android:id="@+id/et_nombreJugadorInsertado"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:width="250dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:hint="Escribe aquí el nombre"
+            android:inputType="text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/tv_dorsalJugador"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nombreEquipo"
+            app:layout_constraintVertical_bias="0.296" />
+
+        <TextView
+            android:id="@+id/tv_posicionJugadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="368dp"
+            android:text="Posicion"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.703"
+            app:layout_constraintStart_toEndOf="@+id/tv_dorsalJugador"
+            app:layout_constraintTop_toBottomOf="@+id/et_nombreJugadorInsertado"
+            app:layout_constraintVertical_bias="0.478" />
+
+        <TextView
+            android:id="@+id/tv_SiError"
+            android:layout_width="254dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/design_default_color_error"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.431"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_pesoJugadorInsertado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peso"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.226"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.362" />
+
+        <TextView
+            android:id="@+id/tv_notasJugadorInsertado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notas"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_SiError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_fechaNacJugadorInsertado"
+            app:layout_constraintVertical_bias="0.082" />
+
+        <Switch
+            android:id="@+id/swt_jugadorDisponible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disponible"
+            app:layout_constraintBottom_toTopOf="@+id/tv_SiError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_notasJugadorInsertado"
+            app:layout_constraintVertical_bias="0.225" />
+
+        <TextView
+            android:id="@+id/tv_piernaHabil"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Pierna habil"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.831"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <Spinner
+            android:id="@+id/spn_piernaHabilJugadorInsertado"
+            android:layout_width="66dp"
+            android:layout_height="30dp"
+            android:background="@drawable/edittext_border"
+            android:fadeScrollbars="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.878"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.609" />
+
+        <TextView
+            android:id="@+id/tv_cm"
+            android:layout_width="42dp"
+            android:layout_height="13dp"
+            android:text="(cm)"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38" />
+
+        <TextView
+            android:id="@+id/tv_kg"
+            android:layout_width="42dp"
+            android:layout_height="13dp"
+            android:text="(kg)"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.395"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_aceptarCambiosOInsertar"
+        android:layout_width="200dp"
+        android:layout_height="33dp"
+        android:background="@drawable/boton"
+        android:gravity="center"
+        android:text="ACEPTAR"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="88dp"
+        android:layout_height="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/jugadores_de_futbol" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
