@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String duracionEntrenamiento;
     public static String materialesEntrenamiento;
     public static String videoEntrenamiento;
-    public static String equipoSeleccionadoAEditar = "Prueba12";
     public static String equipoSeleccionadoAEditar = "";
     public static int jugadorSeleccionadoAEditarOEliminar;
     public static String fechaNacJugadorInsertado;
