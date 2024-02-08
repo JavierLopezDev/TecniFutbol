@@ -25,6 +25,12 @@ public class ElegirJugadores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elegir_jugadores);
 
+        if (MainActivity.tipoPartido.equals("Entrenamiento")){
+            paraPartidoEntrenamiento();
+        }else if (MainActivity.tipoPartido.equals("VS Equipo")){
+            paraPartidoVSEquipo();
+        }
+
     }
     public void paraPartidoEntrenamiento(){
         Spinner spnTipoPartido = findViewById(R.id.spn_tipoPartido);

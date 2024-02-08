@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int jugadorSeleccionadoAEditarOEliminar;
     public static String fechaNacJugadorInsertado;
     public static Jugador jugadorSeleccionadoAEditar = null;
+    public static String tipoPartido;
 
     SignInButton signInButton;
     TextView signOutButton;
