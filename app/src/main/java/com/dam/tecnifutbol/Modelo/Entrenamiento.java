@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol.Entrenador.Entrenamientos;
+package com.dam.tecnifutbol.Modelo;
 
 public class Entrenamiento {
     private String nombre;

@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 
 import com.dam.tecnifutbol.MainActivity;
+import com.dam.tecnifutbol.Modelo.Entrenamiento;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;

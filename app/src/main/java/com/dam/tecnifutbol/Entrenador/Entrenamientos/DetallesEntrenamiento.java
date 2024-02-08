@@ -37,6 +37,9 @@ public class DetallesEntrenamiento extends AppCompatActivity {
         cargarDatosEntrenamiento();
     }
 
+    /**
+     * Método que carga los datos del entrenamiento seleccionado en sus campos correspondientes.
+     */
     private void cargarDatosEntrenamiento() {
         nombreEntrenamiento.setText(MainActivity.nombreEntrenamiento);
         descripcionEntrenamiento.setText(MainActivity.descripcionEntrenamiento);
