@@ -98,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, equipo TEXT, nombre TEXT, dorsal TEXT, posicion TEXT, peso TEXT, altura TEXT, fechaNacimiento DATE, " +
                 "piernaHabil TEXT, notas TEXT, disponible BOOLEAN)");
 
+        database.execSQL("DROP TABLE IF EXISTS entrenamientosJugador");
+        database.execSQL("CREATE TABLE IF NOT EXISTS entrenamientosJugador " +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, lugar TEXT, repeticiones TEXT, nota TEXT, imagen BLOB, video TEXT)");
+
     }
 
     /**
