@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
@@ -84,7 +85,7 @@ public class CrearEquipo extends AppCompatActivity implements AdapterView.OnItem
 
         insertarJugadoresEjemplo(nombreAInsertar, Integer.parseInt(cantidadJugadores));
         //Nos movemos a la pantalla de seleccionar equipos
-        Intent intent = new Intent(this, PantallaEntrenador.class);
+        Intent intent = new Intent(this, SeleccionDeEquipos.class);
         startActivity(intent);
 
     }
