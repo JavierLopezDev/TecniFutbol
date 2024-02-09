@@ -86,7 +86,8 @@ public class ElegirJugadores extends AppCompatActivity {
         }
 
         for (int i = 1; i <= numeroDeJugadores / 2; i++) {
-            listaTiposDePartidos.add(i + " VS " + (numeroDeJugadores - i));
+            //Se añade a la lista los tipos de partidos que se pueden jugar pudiendo ser como maximo la mitad de numeroDeJugadores, y ambos equipos deben tener el mismo numero de jugadores
+            listaTiposDePartidos.add( i + " vs " + i);
         }
     }
 
