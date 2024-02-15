@@ -1,8 +1,11 @@
 package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.dam.tecnifutbol.MainActivity;
+import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
@@ -18,6 +22,7 @@ import java.util.List;
 
 public class ElegirJugadores extends AppCompatActivity {
 
+    ArrayList<Jugador> listaJugadores;
     List<String> listaTiposDePartidos = new ArrayList<String>();
     int numeroDeJugadores;
     @Override
@@ -31,6 +36,8 @@ public class ElegirJugadores extends AppCompatActivity {
             paraPartidoVSEquipo();
         }
 
+
+
     }
     public void paraPartidoEntrenamiento(){
         Spinner spnTipoPartido = findViewById(R.id.spn_tipoPartido);
@@ -41,6 +48,32 @@ public class ElegirJugadores extends AppCompatActivity {
         spnTipoPartido.setAdapter(adaptador);
 
         TextView tvTitularBandos = findViewById(R.id.tv_titular_bandos);
+        listaJugadores = new ArrayList<>();
+        RecyclerView recyclerViewJugadores = findViewById(R.id.rv_jugadores_partido);
+        recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));
+
+        consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
+
+        ListaJugadoresAdapter adapter = new ListaJugadoresAdapter(listaJugadores);
+        recyclerViewJugadores.setAdapter(adapter);
+
+        ImageView imageViewLadoIzquierdo = findViewById(R.id.imageView_lado_izaquierdo);
+        ImageView imageViewLadoDerecho = findViewById(R.id.imageView_lado_derecho);
+
+        tvTitularBandos.setText("Equipo 1");
+        imageViewLadoIzquierdo.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_azul_seleccionado);
+
+
+        imageViewLadoIzquierdo.setOnClickListener(v -> {
+            imageViewLadoIzquierdo.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_azul_seleccionado);
+            imageViewLadoDerecho.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_rojo);
+            tvTitularBandos.setText("Equipo 1");
+        });
+        imageViewLadoDerecho.setOnClickListener(v -> {
+            imageViewLadoDerecho.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_rojo_seleccionado);
+            imageViewLadoIzquierdo.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_azul);
+            tvTitularBandos.setText("Equipo 2");
+        });
 
 
     }
@@ -49,18 +82,18 @@ public class ElegirJugadores extends AppCompatActivity {
         Spinner spnTipoPartido = findViewById(R.id.spn_tipoPartido);
         spnTipoPartido.setEnabled(false);
         spnTipoPartido.setVisibility(View.INVISIBLE);
+        listaJugadores = new ArrayList<>();
+        RecyclerView recyclerViewJugadores = findViewById(R.id.rv_jugadores_partido);
+        recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));
+
+        consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
+
+        ListaJugadoresAdapter adapter = new ListaJugadoresAdapter(listaJugadores);
+        recyclerViewJugadores.setAdapter(adapter);
 
 
     }
 
-    public void marcarBandoSeleccionado(ImageView ivBando){
-        //Quitar el fondo que tenga la imagen actualmente
-        ivBando.setImageResource(R.drawable.boton);
-    }
-    public void desmarcarBandoSeleccionado(ImageView ivBando){
-        //Quitar el fondo que tenga la imagen actualmente
-        ivBando.setImageResource(R.drawable.boton);
-    }
 
     public void consultarJugadores(){
         numeroDeJugadores = 0;
@@ -70,9 +103,44 @@ public class ElegirJugadores extends AppCompatActivity {
             System.out.println("No hay jugadores en la base de datos");
         else {
             numeroDeJugadores = cursor.getCount();
-
         }
 
+    }
+
+    public void consultarJugadores(String equipoABuscar) {
+        SQLiteDatabase database = MainActivity.database;
+        Cursor cursor = database.rawQuery("SELECT * FROM jugadores WHERE equipo = '" + equipoABuscar + "'", null);
+        if (cursor.getCount() == 0)
+            System.out.println("No hay jugadores en la base de datos");
+        else {
+            while (cursor.moveToNext()) {
+                int id = cursor.getInt(0);
+                String equipo = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String dorsal = cursor.getString(3);
+                String posicion = cursor.getString(4);
+                String peso = cursor.getString(5);
+                String altura = cursor.getString(6);
+                String fechaNacimiento = cursor.getString(7);
+                String piernaHabil = cursor.getString(8);
+                String notas = cursor.getString(9);
+                int disponible = cursor.getInt(10);
+                boolean disponibleBoolean = false;
+                if (disponible == 1) {
+                    disponibleBoolean = true;
+                }
+
+
+                Jugador jugador = new Jugador(id, equipo, nombre, dorsal, posicion, peso, altura, fechaNacimiento, piernaHabil, notas, disponibleBoolean);
+                listaJugadores.add(jugador);
+            }
+            //Odernar la lista de menor a mayor por su dorsal
+            listaJugadores.sort((o1, o2) -> {
+                int dorsal1 = Integer.parseInt(o1.getDorsal());
+                int dorsal2 = Integer.parseInt(o2.getDorsal());
+                return Integer.compare(dorsal1, dorsal2);
+            });
+        }
     }
 
     public void listarTiposDePartidos(int numeroDeJugadores) {

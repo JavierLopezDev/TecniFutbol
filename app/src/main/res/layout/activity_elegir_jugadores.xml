@@ -45,20 +45,19 @@
         android:id="@+id/spn_tipoPartido"
         android:layout_width="135dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="700dp"
         android:background="@drawable/edittext_border"
         android:fadeScrollbars="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rv_jugadores_partido"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintHorizontal_bias="0.311"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_dorsalJugador"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_jugadores_partido"
-        android:layout_width="367dp"
-        android:layout_height="626dp"
+        android:layout_width="355dp"
+        android:layout_height="580dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,14 +93,14 @@
             android:layout_width="43dp"
             android:layout_height="33dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/jugador_de_futbol_intentando_patear_la_pelota" />
+            app:srcCompat="@drawable/jugador_de_futbol_intentando_patear_la_pelota_azul" />
 
         <ImageView
             android:id="@+id/imageView_lado_derecho"
             android:layout_width="43dp"
             android:layout_height="33dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/jugador_de_futbol_intentando_patear_la_pelota" />
+            app:srcCompat="@drawable/jugador_de_futbol_intentando_patear_la_pelota_rojo" />
     </LinearLayout>
 
     <TextView
