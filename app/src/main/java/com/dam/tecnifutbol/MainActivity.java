@@ -5,12 +5,16 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +35,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SQLiteDatabase database;
@@ -98,6 +104,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, equipo TEXT, nombre TEXT, dorsal TEXT, posicion TEXT, peso TEXT, altura TEXT, fechaNacimiento DATE, " +
                 "piernaHabil TEXT, notas TEXT, disponible BOOLEAN)");
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     /**
@@ -208,5 +216,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 }

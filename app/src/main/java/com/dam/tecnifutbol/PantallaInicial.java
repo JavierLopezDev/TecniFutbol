@@ -1,6 +1,7 @@
 package com.dam.tecnifutbol;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class PantallaInicial extends AppCompatActivity {
             //startActivity(intent);
         });
 
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 }
