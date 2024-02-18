@@ -2,6 +2,7 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
@@ -41,6 +42,7 @@ public class PartidoEnCurso extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partido_en_curso);
+
         imageViewImagenEquipo1 = findViewById(R.id.imageview_equipo1);
         tv_NombreEquipo1 = findViewById(R.id.tv_NombreEquipo1);
         tv_CategoriaEquipo1 = findViewById(R.id.tv_CategoriaEquipo1);
@@ -53,9 +55,11 @@ public class PartidoEnCurso extends AppCompatActivity {
         tv_botonMasTiempo = findViewById(R.id.tv_botonMasTiempo);
         tv_BotonEmpezar = findViewById(R.id.tv_BotonEmpezar);
         recyclerViewJugadores = findViewById(R.id.recyclerViewJugadores);
-
         tv_botonMenosTiempo.setBackgroundResource(R.drawable.ico_quitartiempo2);
         tv_botonMasTiempo.setBackgroundResource(R.drawable.ico_aumentartiempo2);
+        recyclerViewJugadores = findViewById(R.id.recyclerViewJugadores);
+        recyclerViewJugadores.setLayoutManager(new LinearLayoutManager(this));
+
 
         tv_BotonEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
