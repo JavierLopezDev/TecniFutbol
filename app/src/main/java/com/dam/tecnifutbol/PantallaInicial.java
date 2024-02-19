@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
 
@@ -32,14 +31,5 @@ public class PantallaInicial extends AppCompatActivity {
             //Intent intent = new Intent(this, PantallaJugador.class);
             //startActivity(intent);
         });
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
     }
 }

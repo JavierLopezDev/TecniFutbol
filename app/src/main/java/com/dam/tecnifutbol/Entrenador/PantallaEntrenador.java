@@ -36,14 +36,5 @@ public class PantallaEntrenador extends AppCompatActivity {
             startActivity(intent);
         });
         //Cuando seleccione btn_Partidos me llevara a la actividad de seleccionDeEquipos
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
     }
 }
