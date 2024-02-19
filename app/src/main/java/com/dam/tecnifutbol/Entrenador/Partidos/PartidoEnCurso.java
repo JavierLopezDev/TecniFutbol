@@ -21,6 +21,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PartidoEnCurso extends AppCompatActivity {
     private ImageView imageViewImagenEquipo1;
     private TextView tv_NombreEquipo1;
@@ -37,6 +40,8 @@ public class PartidoEnCurso extends AppCompatActivity {
     private CountDownTimer contador;
     private boolean cuentaAtrasCorriendo = false;
     private long tiempoRestanteEnMillis = 0;
+    private JugadorAdapter jugadorAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +50,7 @@ public class PartidoEnCurso extends AppCompatActivity {
 
         imageViewImagenEquipo1 = findViewById(R.id.imageview_equipo1);
         tv_NombreEquipo1 = findViewById(R.id.tv_NombreEquipo1);
-        tv_CategoriaEquipo1 = findViewById(R.id.tv_CategoriaEquipo1);
         tv_NombreEquipo2 = findViewById(R.id.tv_NombreEquipo2);
-        tv_CategoriaEquipo2 = findViewById(R.id.tv_CategoriaEquipo2);
         imageViewImagenEquipo2 = findViewById(R.id.imageview_equipo2);
         tv_Marcador = findViewById(R.id.tv_Marcador);
         tv_cronometro = findViewById(R.id.tv_Cronometro);
@@ -60,6 +63,20 @@ public class PartidoEnCurso extends AppCompatActivity {
         recyclerViewJugadores = findViewById(R.id.recyclerViewJugadores);
         recyclerViewJugadores.setLayoutManager(new LinearLayoutManager(this));
 
+        List<Jugador> jugadores = new ArrayList<>();
+        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
+        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
+        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
+        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
+        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
+        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
+        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
+        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
+
+
+        // Crear y configurar el adaptador
+        jugadorAdapter = new JugadorAdapter(jugadores);
+        recyclerViewJugadores.setAdapter(jugadorAdapter);
 
         tv_BotonEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
