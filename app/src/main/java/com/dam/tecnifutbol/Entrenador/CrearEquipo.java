@@ -130,4 +130,7 @@ public class CrearEquipo extends AppCompatActivity implements AdapterView.OnItem
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 }

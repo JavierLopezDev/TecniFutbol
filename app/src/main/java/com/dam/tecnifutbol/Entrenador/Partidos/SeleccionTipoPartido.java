@@ -30,4 +30,8 @@ public class SeleccionTipoPartido extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

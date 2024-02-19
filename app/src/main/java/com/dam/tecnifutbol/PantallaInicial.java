@@ -39,4 +39,8 @@ public class PantallaInicial extends AppCompatActivity {
             dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
         });
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

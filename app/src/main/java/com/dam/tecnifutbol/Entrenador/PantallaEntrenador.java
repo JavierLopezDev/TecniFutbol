@@ -45,4 +45,8 @@ public class PantallaEntrenador extends AppCompatActivity {
             dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
         });
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

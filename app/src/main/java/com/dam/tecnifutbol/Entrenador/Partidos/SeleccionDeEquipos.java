@@ -105,4 +105,8 @@ public class SeleccionDeEquipos extends AppCompatActivity {
         cursor.close();
         return equipos;
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

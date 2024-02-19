@@ -13,4 +13,8 @@ public class PantallaSeleccionEntrenamiento extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_seleccion_entrenamiento);
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

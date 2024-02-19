@@ -23,4 +23,8 @@ public class PartidoEnCurso extends AppCompatActivity {
         nombreEqquipo1.setText(equipo1.getNombre());
         nombreEqquipo2.setText(equipo2.getNombre());
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

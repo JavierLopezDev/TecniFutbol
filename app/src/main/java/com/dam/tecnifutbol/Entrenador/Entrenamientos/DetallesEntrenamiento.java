@@ -58,4 +58,8 @@ public class DetallesEntrenamiento extends AppCompatActivity {
         videoView.setOnPreparedListener(mp -> mp.setLooping(true));
         videoView.start();
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

@@ -71,4 +71,8 @@ public class PantallaEntrenamientos extends AppCompatActivity {
         myAdapter = new AdaptadorEntrenamientos(entrenamientos);
         recyclerView.setAdapter(myAdapter);
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }
