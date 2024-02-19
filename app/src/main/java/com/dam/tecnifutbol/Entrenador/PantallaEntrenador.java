@@ -2,10 +2,12 @@ package com.dam.tecnifutbol.Entrenador;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
 import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
@@ -35,5 +37,13 @@ public class PantallaEntrenador extends AppCompatActivity {
         });
         //Cuando seleccione btn_Partidos me llevara a la actividad de seleccionDeEquipos
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 }
