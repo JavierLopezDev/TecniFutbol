@@ -13,28 +13,28 @@
         android:theme="@style/Theme.TecniFutbol"
         tools:targetApi="31">
         <activity
+            android:name=".Jugador.Casa.PantallaEntrenamientoCasa"
+            android:exported="false" />
+        <activity
             android:name=".Entrenador.Partidos.PartidoEnCurso"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Jugador.PantallaSeleccionEntrenamiento"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Entrenador.Partidos.EditarOCrearJugador"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Entrenador.Partidos.EditarEquipo"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Entrenador.CrearEquipo"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Entrenador.Partidos.SeleccionTipoPartido"
             android:exported="false"
@@ -43,7 +43,6 @@
             android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".PantallaInicial"
             android:exported="false"

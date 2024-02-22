@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dam.tecnifutbol.Jugador.InsertarEntrenamientosJugador;
 import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.InsertarEntrenamientos;
@@ -53,6 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int jugadorSeleccionadoAEditarOEliminar;
     public static String fechaNacJugadorInsertado;
     public static Jugador jugadorSeleccionadoAEditar = null;
+    public static String nombreEntrJug;
+    public static String descripcionEntrJug;
+    public static String lugarEntrJug;
+    public static String repeticionesEntrJug;
+    public static String notaEntrJug;
+    public static int imagenEntrJug;
+    public static String videoEntrJug;
 
     SignInButton signInButton;
     TextView signOutButton;
@@ -109,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         database.execSQL("DROP TABLE IF EXISTS entrenamientosJugador");
         database.execSQL("CREATE TABLE IF NOT EXISTS entrenamientosJugador " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, lugar TEXT, repeticiones TEXT, nota TEXT, imagen BLOB, video TEXT)");
+        insertarEntrenamientosJugador();
 
         menuHaburguesa = findViewById(R.id.burguer_menu);
         menuHaburguesa.setOnClickListener(v -> {
@@ -130,6 +139,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             InsertarEntrenamientos.insertarEntrenamientosDe11A14Años();
             InsertarEntrenamientos.insertarEntrenamientosDe14A18Años();
             InsertarEntrenamientos.insertarEntrenamientosDeMas18Años();
+        }
+    }
+
+    private void insertarEntrenamientosJugador() {
+        Cursor cursor = database.rawQuery("SELECT * FROM entrenamientosJugador", null);
+
+        if (cursor.getCount() == 0) {
+            InsertarEntrenamientosJugador.insertarEntrenamientosEnCasa();
+            InsertarEntrenamientosJugador.insertarEntrenamientosEnGym();
         }
     }
 
