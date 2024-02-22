@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dam.tecnifutbol.Modelo.Jugador;
-import com.dam.tecnifutbol.R;
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.InsertarEntrenamientos;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -32,6 +31,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SQLiteDatabase database;
     public static String nombreEntrenamiento;
@@ -46,7 +47,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int jugadorSeleccionadoAEditarOEliminar;
     public static String fechaNacJugadorInsertado;
     public static Jugador jugadorSeleccionadoAEditar = null;
+
+    public static ArrayList<String> jugadoresTitularesSeleccionados;
+    public static ArrayList<String> jugadoresSuplentesSeleccionados;
     public static String tipoPartido;
+    public static int maximoJugadoresTitulares;
+
+    public static String bandoSeleccionadoEnElegirJugadores;
 
     SignInButton signInButton;
     TextView signOutButton;
