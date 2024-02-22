@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol.Jugador.Casa;
+package com.dam.tecnifutbol.Jugador.Gimnasio;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,7 +15,7 @@ import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
 
-public class PantallaEntrenamientoCasa extends AppCompatActivity {
+public class PantallaEntrenamientosGimnasio extends AppCompatActivity {
 
     private ArrayList<EntrenamientoJugador> entrenamientosJugador = new ArrayList<>();
     RecyclerView recyclerView;
@@ -25,7 +25,7 @@ public class PantallaEntrenamientoCasa extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_entrenamiento_casa);
+        setContentView(R.layout.activity_pantalla_entrenamientos_gimnasio);
 
         obtenerEntrenamientosCasa();
         iniciarRecyclerView();
@@ -37,7 +37,7 @@ public class PantallaEntrenamientoCasa extends AppCompatActivity {
     }
 
     private void obtenerEntrenamientosCasa() {
-        Cursor cursor = MainActivity.database.rawQuery("SELECT * FROM entrenamientosJugador WHERE lugar = 'CASA'", null);
+        Cursor cursor = MainActivity.database.rawQuery("SELECT * FROM entrenamientosJugador WHERE lugar = 'GYM'", null);
 
         while (cursor.moveToNext()) {
             //nombre TEXT, descripcion TEXT, lugar TEXT, repeticiones TEXT, nota TEXT, imagen BLOB, video TEXT
@@ -54,7 +54,7 @@ public class PantallaEntrenamientoCasa extends AppCompatActivity {
     }
 
     private void iniciarRecyclerView() {
-        recyclerView = findViewById(R.id.recyclerViewEntrenamientosCasa);
+        recyclerView = findViewById(R.id.recyclerViewEntrenamientosGimnasio);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -64,5 +64,4 @@ public class PantallaEntrenamientoCasa extends AppCompatActivity {
     @Override
     public void onBackPressed() {
     }
-
 }

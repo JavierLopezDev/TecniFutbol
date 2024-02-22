@@ -8,6 +8,7 @@
     tools:context=".Jugador.PantallaSeleccionEntrenamiento">
 
     <LinearLayout
+        android:id="@+id/ly_casa"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:background="@drawable/boton"
@@ -40,6 +41,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ly_gym"
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:background="@drawable/boton"
