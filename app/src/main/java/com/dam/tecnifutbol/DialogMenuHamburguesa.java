@@ -13,12 +13,13 @@ import androidx.fragment.app.DialogFragment;
 
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
 import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+import com.dam.tecnifutbol.Jugador.PantallaSeleccionEntrenamiento;
 
 public class DialogMenuHamburguesa extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        String[] actividades = {"Pantalla principal", "Entrenador", "Pantalla Entrenamientos"};
+        String[] actividades = {"Incio", "Entrenador", "Jugador", "Entrenamientos"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, actividades);
 
@@ -27,14 +28,18 @@ public class DialogMenuHamburguesa extends DialogFragment {
         builder.setAdapter(adapter, (dialog, which) -> {
             switch (which) {
                 case 0:
-                    Intent intent = new Intent(getActivity(), PantallaInicial.class);
-                    startActivity(intent);
+                    Intent intent0 = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent0);
                     break;
                 case 1:
-                    Intent intent2 = new Intent(getActivity(), PantallaEntrenador.class);
-                    startActivity(intent2);
+                    Intent intent1 = new Intent(getActivity(), PantallaEntrenador.class);
+                    startActivity(intent1);
                     break;
                 case 2:
+                    Intent intent2 = new Intent(getActivity(), PantallaSeleccionEntrenamiento.class);
+                    startActivity(intent2);
+                    break;
+                case 3:
                     Intent intent3 = new Intent(getActivity(), PantallaEntrenamientos.class);
                     startActivity(intent3);
                     break;
