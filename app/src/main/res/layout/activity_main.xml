@@ -7,6 +7,17 @@
     android:background="@drawable/fondodepantalla2"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/burguer_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/burger_menu" />
+
     <ImageView
         android:layout_width="116dp"
         android:layout_height="122dp"

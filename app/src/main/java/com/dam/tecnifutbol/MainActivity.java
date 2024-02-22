@@ -5,13 +5,18 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +36,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SQLiteDatabase database;
@@ -53,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int SIGN_IN = 123;
     public static FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
+    private ImageButton menuHaburguesa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +110,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         database.execSQL("CREATE TABLE IF NOT EXISTS entrenamientosJugador " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, lugar TEXT, repeticiones TEXT, nota TEXT, imagen BLOB, video TEXT)");
 
+        menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+        menuHaburguesa.setVisibility(View.GONE);
     }
 
     /**
@@ -184,9 +198,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     + "[" + user.getEmail() + "]", Toast.LENGTH_LONG).show();
             signInButton.setVisibility(View.GONE);
             signOutButton.setVisibility(View.VISIBLE);
+            menuHaburguesa.setVisibility(View.VISIBLE);
         } else {
             signInButton.setVisibility(View.VISIBLE);
             signOutButton.setVisibility(View.GONE);
+            menuHaburguesa.setVisibility(View.GONE);
             tv_iniciarSesion.setText("Inicia Sesion");
         }
     }
@@ -212,5 +228,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

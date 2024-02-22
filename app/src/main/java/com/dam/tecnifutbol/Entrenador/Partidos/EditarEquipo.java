@@ -115,4 +115,8 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
                 linearLayout.setBackgroundResource(R.drawable.botonseleccionado);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }
