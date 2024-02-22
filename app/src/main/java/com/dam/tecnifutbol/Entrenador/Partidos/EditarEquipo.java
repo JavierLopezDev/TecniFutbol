@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;
@@ -64,6 +65,16 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         });
 
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     public void consultarJugadores(String equipoABuscar) {

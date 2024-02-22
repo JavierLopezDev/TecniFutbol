@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.Entrenador.DialogoFecha;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
@@ -102,15 +103,26 @@ public class EditarOCrearJugador extends AppCompatActivity {
         tvAceptar.setOnClickListener(v -> {
             comprobarCampos();
             TextView tv_siError = findViewById(R.id.tv_SiError);
-            if (tv_siError.getText().toString().isEmpty()){
+            if (tv_siError.getText().toString().isEmpty()) {
                 insertarOEditarJugador();
-                Intent intent = new Intent(this, EditarEquipo.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(this, EditarEquipo.class);
+                startActivity(intent);*/
+                finish();
             }
 
 
         });
 
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     public void clickFecha() {
