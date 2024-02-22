@@ -165,7 +165,7 @@ public class InsertarEntrenamientosJugador {
                 "'4 series x 15 repeticiones', " +
                 "'', " +
                 R.drawable.sentadilla + ", " +
-                "'android.resource://com.dam.tecnifutbol/" + R.raw. + "')"
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.sentadillas + "')"
         );
         MainActivity.database.execSQL("INSERT INTO entrenamientosJugador (nombre, descripcion, lugar, repeticiones, nota, imagen, video) " +
                 "VALUES (" +
@@ -175,7 +175,7 @@ public class InsertarEntrenamientosJugador {
                 "'3 series x 10 repeticiones', " +
                 "'', " +
                 R.drawable.flexiones + ", " +
-                "'android.resource://com.dam.tecnifutbol/" + R.raw. + "')"
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.flexiones + "')"
         );
         MainActivity.database.execSQL("INSERT INTO entrenamientosJugador (nombre, descripcion, lugar, repeticiones, nota, imagen, video) " +
                 "VALUES (" +
@@ -185,7 +185,7 @@ public class InsertarEntrenamientosJugador {
                 "'3 series x 12 repeticiones', " +
                 "'', " +
                 R.drawable.zancadas + ", " +
-                "'android.resource://com.dam.tecnifutbol/" + R.raw. + "')"
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.zancada + "')"
         );
         MainActivity.database.execSQL("INSERT INTO entrenamientosJugador (nombre, descripcion, lugar, repeticiones, nota, imagen, video) " +
                 "VALUES (" +
@@ -195,7 +195,7 @@ public class InsertarEntrenamientosJugador {
                 "'4 series x 30 segundos', " +
                 "'', " +
                 R.drawable.sprint_sitio + ", " +
-                "'android.resource://com.dam.tecnifutbol/" + R.raw. + "')"
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.sprint_sitio + "')"
         );
         MainActivity.database.execSQL("INSERT INTO entrenamientosJugador (nombre, descripcion, lugar, repeticiones, nota, imagen, video) " +
                 "VALUES (" +
@@ -205,7 +205,7 @@ public class InsertarEntrenamientosJugador {
                 "'3 series x 15 repeticiones', " +
                 "'', " +
                 R.drawable.plancha + ", " +
-                "'android.resource://com.dam.tecnifutbol/" + R.raw. + "')"
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.plancha_hombro + "')"
         );
         MainActivity.database.execSQL("INSERT INTO entrenamientosJugador (nombre, descripcion, lugar, repeticiones, nota, imagen, video) " +
                 "VALUES (" +
@@ -215,7 +215,7 @@ public class InsertarEntrenamientosJugador {
                 "'3 series x 40 segundos/pierna', " +
                 "'', " +
                 R.drawable.equilibrio_una_pierna + ", " +
-                "'android.resource://com.dam.tecnifutbol/" + R.raw. + "')"
+                "'android.resource://com.dam.tecnifutbol/" + R.raw.equilibrio_pierna + "')"
         );
     }
 }
