@@ -18,27 +18,23 @@ public class DialogMenuHamburguesa extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        String[] actividades = {"Login", "Pantalla principal", "Entrenador", "Pantalla Entrenamientos"};
+        String[] actividades = {"Pantalla principal", "Entrenador", "Pantalla Entrenamientos"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, actividades);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Menú");
+        /*builder.setTitle("Menú");*/
         builder.setAdapter(adapter, (dialog, which) -> {
             switch (which) {
                 case 0:
-                    Intent intent0 = new Intent(getActivity(), MainActivity.class);
-                    startActivity(intent0);
-                    break;
-                case 1:
                     Intent intent = new Intent(getActivity(), PantallaInicial.class);
                     startActivity(intent);
                     break;
-                case 2:
+                case 1:
                     Intent intent2 = new Intent(getActivity(), PantallaEntrenador.class);
                     startActivity(intent2);
                     break;
-                case 3:
+                case 2:
                     Intent intent3 = new Intent(getActivity(), PantallaEntrenamientos.class);
                     startActivity(intent3);
                     break;
