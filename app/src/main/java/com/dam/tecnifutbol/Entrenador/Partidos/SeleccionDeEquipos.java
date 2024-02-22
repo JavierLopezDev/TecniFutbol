@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dam.tecnifutbol.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.Entrenador.CrearEquipo;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
@@ -73,6 +74,17 @@ public class SeleccionDeEquipos extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Por favor, seleccione exactamente 1 equipos para el partido", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
         });
     }
     @Override
