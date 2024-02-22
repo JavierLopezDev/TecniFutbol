@@ -1,5 +1,8 @@
 package com.dam.tecnifutbol.Entrenador.Partidos;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,15 +19,18 @@ import com.dam.tecnifutbol.R;
 import java.util.List;
 
 public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.ViewHolder> {
-    private static final int MENU_GOL_LOCAL = R.id.menu_gol_local;
-    private static final int MENU_GOL_VISITANTE = R.id.menu_gol_visitante;
+    private static final int MENU_GOL_LOCAL = R.id.menu_gol;
     private static final int MENU_FALTA = R.id.menu_falta;
     private static final int MENU_TARJETA_ROJA = R.id.menu_tarjeta_roja;
     private static final int MENU_TARJETA_AMARILLA = R.id.menu_tarjeta_amarilla;
-    private List<Jugador> jugadores;
+    private SQLiteDatabase database; // Agrega esta variable para acceder a la base de datos SQLite
 
-    public JugadorAdapter(List<Jugador> jugadores) {
+    private List<Jugador> jugadores;
+    private Jugador jugadorSeleccionado;
+
+    public JugadorAdapter(List<Jugador> jugadores, SQLiteDatabase database) {
         this.jugadores = jugadores;
+        this.database = database;
     }
 
     @NonNull
@@ -58,39 +64,69 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.ViewHold
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mostrarMenuOpciones(v);
-
+                    // Obtener la posición del jugador seleccionado
+                    int adapterPosition = getAdapterPosition();
+                    if (adapterPosition != RecyclerView.NO_POSITION) {
+                        // Obtener el jugador correspondiente a la posición en el RecyclerView
+                        Jugador jugadorSeleccionado = jugadores.get(adapterPosition);
+                        // Llamar al método mostrarMenuOpciones() del adaptador
+                        mostrarMenuOpciones(v, jugadorSeleccionado);
+                    }
                 }
             });
         }
-        private void mostrarMenuOpciones(View view) {
+
+        // Método para mostrar el menú de opciones
+        private void mostrarMenuOpciones(View view, Jugador jugadorSeleccionado) {
             PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
             popupMenu.inflate(R.menu.menu_opciones_jugador);
             popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
-                    switch (item.getItemId()) {
-                        case 0:
-                            Toast.makeText(itemView.getContext(), "Gol local", Toast.LENGTH_SHORT).show();
-                            return true;
-                        case 1: // Índice del segundo elemento del menú
-                            Toast.makeText(itemView.getContext(), "Gol visitante", Toast.LENGTH_SHORT).show();
-                            return true;
-                        case 2: // Índice del tercer elemento del menú
-                            Toast.makeText(itemView.getContext(), "Falta", Toast.LENGTH_SHORT).show();
-                            return true;
-                        case 3: // Índice del cuarto elemento del menú
-                            Toast.makeText(itemView.getContext(), "Tarjeta roja", Toast.LENGTH_SHORT).show();
-                            return true;
-                        case 4: // Índice del quinto elemento del menú
-                            Toast.makeText(itemView.getContext(), "Tarjeta amarilla", Toast.LENGTH_SHORT).show();
-                            return true;
-                        default:
-                            return false;
+                    int itemId = item.getItemId();
+                    if (itemId == R.id.menu_gol) {
+                        actualizarEstadisticas(jugadorSeleccionado, "goles", jugadorSeleccionado.getGoles() + 1);
+                        Toast.makeText(itemView.getContext(), "Gol", Toast.LENGTH_SHORT).show();
+                        return true;
+                    } else if (itemId == R.id.menu_falta) {
+                        actualizarEstadisticas(jugadorSeleccionado, "faltasRealizadas", jugadorSeleccionado.getFaltasRealizadas() + 1);
+                        Toast.makeText(itemView.getContext(), "Falta", Toast.LENGTH_SHORT).show();
+                        return true;
+                    } else if (itemId == R.id.menu_tarjeta_roja) {
+                        actualizarEstadisticas(jugadorSeleccionado, "tarjetasRojas", jugadorSeleccionado.getTarjetaRoja() + 1);
+                        Toast.makeText(itemView.getContext(), "Tarjeta roja", Toast.LENGTH_SHORT).show();
+                        return true;
+                    } else if (itemId == R.id.menu_tarjeta_amarilla) {
+                        actualizarEstadisticas(jugadorSeleccionado, "tarjetaAmarillas", jugadorSeleccionado.getTarjetaAmarilla() + 1);
+                        Toast.makeText(itemView.getContext(), "Tarjeta amarilla", Toast.LENGTH_SHORT).show();
+                        return true;
+                    } else {
+                        return false;
                     }
                 }
             });
             popupMenu.show();
+        }
+
+
+
+        private void actualizarEstadisticas(Jugador jugador, String columna, int nuevoValor) {
+            String jugadorNombre = jugador.getNombre();
+            Cursor cursor = database.rawQuery("SELECT * FROM estadisticas_jugador WHERE jugador = ?", new String[]{jugadorNombre});
+            if (cursor.moveToFirst()) {
+                String sql = "UPDATE estadisticas_jugador SET " + columna + " = " + nuevoValor + " WHERE jugador = ?";
+                database.execSQL(sql, new String[]{jugadorNombre});
+                Toast.makeText(itemView.getContext(), "Estadisticas introducidas", Toast.LENGTH_SHORT).show();
+
+            } else {
+                // El jugador no existe, lo creamos
+                ContentValues values = new ContentValues();
+                values.put("jugador", jugadorNombre);
+                values.put(columna, nuevoValor);
+                database.insert("estadisticas_jugador", null, values);
+            }
+            cursor.close();
+            notifyDataSetChanged();
         }
     }
 }

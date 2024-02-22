@@ -1,10 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/menu_gol_local"
-        android:title="Gol local"/>
-    <item
-        android:id="@+id/menu_gol_visitante"
-        android:title="Gol visitante"/>
+        android:id="@+id/menu_gol"
+        android:title="Gol"/>
     <item
         android:id="@+id/menu_falta"
         android:title="Falta"/>

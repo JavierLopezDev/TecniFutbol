@@ -9,9 +9,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewJugadores"
-        android:layout_width="411dp"
-        android:layout_height="296dp"
-        android:background="@android:color/holo_green_light"
+        android:layout_width="413dp"
+        android:layout_height="310dp"
+        android:background="@android:color/holo_green_dark"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/tv_Campo"
         android:layout_width="434dp"
         android:layout_height="27dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:text="Campo"
         android:textColor="@color/white"

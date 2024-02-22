@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
 import android.os.Bundle;
@@ -66,16 +67,10 @@ public class PartidoEnCurso extends AppCompatActivity {
         List<Jugador> jugadores = new ArrayList<>();
         jugadores.add(new Jugador("Lionel Messi", "Delantero"));
         jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
-        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
-        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
-        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
-        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
-        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
-        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
 
 
         // Crear y configurar el adaptador
-        jugadorAdapter = new JugadorAdapter(jugadores);
+        jugadorAdapter = new JugadorAdapter(jugadores, MainActivity.database);
         recyclerViewJugadores.setAdapter(jugadorAdapter);
 
         tv_BotonEmpezar.setOnClickListener(new View.OnClickListener() {
