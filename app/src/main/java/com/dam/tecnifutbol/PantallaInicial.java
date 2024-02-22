@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+import com.dam.tecnifutbol.Jugador.PantallaSeleccionEntrenamiento;
 
 public class PantallaInicial extends AppCompatActivity {
 
@@ -27,8 +28,8 @@ public class PantallaInicial extends AppCompatActivity {
 
         jugador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
-            //Intent intent = new Intent(this, PantallaJugador.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, PantallaSeleccionEntrenamiento.class);
+            startActivity(intent);
         });
 
 
