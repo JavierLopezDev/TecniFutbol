@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String fechaNacJugadorInsertado;
     public static Jugador jugadorSeleccionadoAEditar = null;
 
-    public static ArrayList<String> jugadoresTitularesSeleccionados;
-    public static ArrayList<String> jugadoresSuplentesSeleccionados;
+    public static ArrayList<Jugador> jugadoresTitularesSeleccionados;
+    public static ArrayList<Jugador> jugadoresSuplentesSeleccionados;
     public static String tipoPartido;
     public static int maximoJugadoresTitulares;
 

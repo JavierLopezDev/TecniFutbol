@@ -100,10 +100,45 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
 
         consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
 
-        ListaJugadoresAdapter adapter = new ListaJugadoresAdapter(listaJugadores);
+        TextView tvTitularBandos = findViewById(R.id.tv_titular_bandos);
+        listaJugadores = new ArrayList<>();
+        recyclerViewJugadores = findViewById(R.id.rv_jugadores_partido);
+        recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));
+
+        consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
+
+        consultarMaximoJugadores();
+        ListaElegirJugadoresAdapter adapter = new ListaElegirJugadoresAdapter(listaJugadores, MainActivity.maximoJugadoresTitulares);
         recyclerViewJugadores.setAdapter(adapter);
 
 
+
+        ImageView imageViewLadoIzquierdo = findViewById(R.id.imageView_lado_izaquierdo);
+        ImageView imageViewLadoDerecho = findViewById(R.id.imageView_lado_derecho);
+
+        tvTitularBandos.setText("Titulares");
+        imageViewLadoIzquierdo.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_azul_seleccionado);
+        MainActivity.bandoSeleccionadoEnElegirJugadores = "Titulares";
+
+
+        imageViewLadoIzquierdo.setOnClickListener(v -> {
+            imageViewLadoIzquierdo.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_azul_seleccionado);
+            imageViewLadoDerecho.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_rojo);
+            tvTitularBandos.setText("Titulares");
+            MainActivity.bandoSeleccionadoEnElegirJugadores = "Titulares";
+            /*listaJugadores = new ArrayList<>();
+            consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
+            recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));*/
+        });
+        imageViewLadoDerecho.setOnClickListener(v -> {
+            imageViewLadoDerecho.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_rojo_seleccionado);
+            imageViewLadoIzquierdo.setImageResource(R.drawable.jugador_de_futbol_intentando_patear_la_pelota_azul);
+            tvTitularBandos.setText("Suplentes");
+            MainActivity.bandoSeleccionadoEnElegirJugadores = "Suplentes";
+            /*listaJugadores = new ArrayList<>();
+            consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
+            recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));*/
+        });
     }
 
 
