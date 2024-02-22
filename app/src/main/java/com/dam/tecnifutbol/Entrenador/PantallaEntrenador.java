@@ -44,6 +44,11 @@ public class PantallaEntrenador extends AppCompatActivity {
             DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
             dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
         });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     @Override

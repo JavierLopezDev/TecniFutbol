@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int SIGN_IN = 123;
     public static FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
+    private ImageButton menuHaburguesa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,11 +106,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, equipo TEXT, nombre TEXT, dorsal TEXT, posicion TEXT, peso TEXT, altura TEXT, fechaNacimiento DATE, " +
                 "piernaHabil TEXT, notas TEXT, disponible BOOLEAN)");
 
-        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa = findViewById(R.id.burguer_menu);
         menuHaburguesa.setOnClickListener(v -> {
             DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
             dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
         });
+        menuHaburguesa.setVisibility(View.GONE);
     }
 
     /**
@@ -192,9 +194,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     + "[" + user.getEmail() + "]", Toast.LENGTH_LONG).show();
             signInButton.setVisibility(View.GONE);
             signOutButton.setVisibility(View.VISIBLE);
+            menuHaburguesa.setVisibility(View.VISIBLE);
         } else {
             signInButton.setVisibility(View.VISIBLE);
             signOutButton.setVisibility(View.GONE);
+            menuHaburguesa.setVisibility(View.GONE);
             tv_iniciarSesion.setText("Inicia Sesion");
         }
     }
