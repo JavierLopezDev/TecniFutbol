@@ -26,7 +26,7 @@ public class AdaptadorEntrenamientos extends RecyclerView.Adapter<AdaptadorEntre
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_seleccion_equipo, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_entrenamientos_entrenador, parent, false);
         return new AdaptadorEntrenamientos.ViewHolder(view);
     }
 
