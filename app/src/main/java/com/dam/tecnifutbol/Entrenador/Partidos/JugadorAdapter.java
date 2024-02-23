@@ -64,19 +64,15 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.ViewHold
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Obtener la posición del jugador seleccionado
                     int adapterPosition = getAdapterPosition();
                     if (adapterPosition != RecyclerView.NO_POSITION) {
-                        // Obtener el jugador correspondiente a la posición en el RecyclerView
                         Jugador jugadorSeleccionado = jugadores.get(adapterPosition);
-                        // Llamar al método mostrarMenuOpciones() del adaptador
                         mostrarMenuOpciones(v, jugadorSeleccionado);
                     }
                 }
             });
         }
 
-        // Método para mostrar el menú de opciones
         private void mostrarMenuOpciones(View view, Jugador jugadorSeleccionado) {
             PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
             popupMenu.inflate(R.menu.menu_opciones_jugador);
