@@ -87,6 +87,16 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
             recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));*/
         });
 
+        TextView tv_aceptarIrAPartido = findViewById(R.id.tv_aceptarIrAPartido);
+        tv_aceptarIrAPartido.setOnClickListener(v -> {
+
+        });
+        TextView tv_volverAElegirEquipo = findViewById(R.id.tv_volverAElegirEquipo);
+        tv_volverAElegirEquipo.setOnClickListener(v -> {
+           finish();
+        });
+
+
 
     }
 
@@ -138,6 +148,14 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
             /*listaJugadores = new ArrayList<>();
             consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
             recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));*/
+        });
+        TextView tv_aceptarIrAPartido = findViewById(R.id.tv_aceptarIrAPartido);
+        tv_aceptarIrAPartido.setOnClickListener(v -> {
+
+        });
+        TextView tv_volverAElegirEquipo = findViewById(R.id.tv_volverAElegirEquipo);
+        tv_volverAElegirEquipo.setOnClickListener(v -> {
+            finish();
         });
     }
 
