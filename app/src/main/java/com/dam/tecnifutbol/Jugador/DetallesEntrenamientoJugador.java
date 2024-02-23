@@ -50,4 +50,8 @@ public class DetallesEntrenamientoJugador extends AppCompatActivity {
         }
         descripcion.setText(MainActivity.descripcionEntrJug);
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

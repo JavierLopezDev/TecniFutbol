@@ -278,4 +278,8 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }
