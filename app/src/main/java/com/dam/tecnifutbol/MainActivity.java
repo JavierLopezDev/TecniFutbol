@@ -38,6 +38,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.ArrayList;
+
 import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -61,6 +63,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String notaEntrJug;
     public static int imagenEntrJug;
     public static String videoEntrJug;
+
+    public static ArrayList<Jugador> jugadoresTitularesSeleccionados;
+    public static ArrayList<Jugador> jugadoresSuplentesSeleccionados;
+    public static String tipoPartido;
+    public static int maximoJugadoresTitulares;
+
+    public static String bandoSeleccionadoEnElegirJugadores;
 
     SignInButton signInButton;
     TextView signOutButton;

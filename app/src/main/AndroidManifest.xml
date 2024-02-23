@@ -45,6 +45,10 @@
             android:name=".Entrenador.Partidos.SeleccionTipoPartido"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".Entrenador.Partidos.ElegirJugadores"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
             android:exported="false"

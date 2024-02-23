@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondodepantalla2"
+    tools:context=".Entrenador.Partidos.ElegirJugadores">
+
+    <TextView
+        android:id="@+id/tv_volverAElegirEquipo"
+        android:layout_width="133dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton"
+        android:gravity="center"
+        android:text="VOLVER"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <TextView
+        android:id="@+id/tv_aceptarIrAPartido"
+        android:layout_width="133dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton"
+        android:gravity="center"
+        android:text="ACEPTAR"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <Spinner
+        android:id="@+id/spn_tipoPartido"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:background="@drawable/edittext_border"
+        android:fadeScrollbars="true"
+        app:layout_constraintBottom_toTopOf="@+id/rv_jugadores_partido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_jugadores_partido"
+        android:layout_width="355dp"
+        android:layout_height="580dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495" />
+
+    <ImageButton
+        android:id="@+id/imageButton_configuracion"
+        android:layout_width="42dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+    <LinearLayout
+        android:layout_width="85dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.015">
+
+        <ImageView
+            android:id="@+id/imageView_lado_izaquierdo"
+            android:layout_width="43dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/jugador_de_futbol_intentando_patear_la_pelota_azul" />
+
+        <ImageView
+            android:id="@+id/imageView_lado_derecho"
+            android:layout_width="43dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/jugador_de_futbol_intentando_patear_la_pelota_rojo" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_titular_bandos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

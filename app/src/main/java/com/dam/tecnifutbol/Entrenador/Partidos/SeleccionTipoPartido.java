@@ -2,10 +2,12 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.R;
 
@@ -22,13 +24,16 @@ public class SeleccionTipoPartido extends AppCompatActivity {
         ly_pVsEquipo = findViewById(R.id.ly_pVsEquipo);
 
         ly_pEntrenamiento.setOnClickListener(view -> {
-            /*Intent intent = new Intent(SeleccionTipoPartido.this, {NombreClase}.class);
-            startActivity(intent);*/
+            MainActivity.tipoPartido = "Entrenamiento";
+            Intent intent = new Intent(this, ElegirJugadores.class);
+            startActivity(intent);
+
         });
 
         ly_pVsEquipo.setOnClickListener(view -> {
-            /*Intent intent = new Intent(SeleccionTipoPartido.this, {NombreClase}.class);
-            startActivity(intent);*/
+            MainActivity.tipoPartido = "VS Equipo";
+            Intent intent = new Intent(this, ElegirJugadores.class);
+            startActivity(intent);
         });
 
         ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
