@@ -28,7 +28,7 @@ public class DialogMenuHamburguesa extends DialogFragment {
         builder.setAdapter(adapter, (dialog, which) -> {
             switch (which) {
                 case 0:
-                    Intent intent0 = new Intent(getActivity(), MainActivity.class);
+                    Intent intent0 = new Intent(getActivity(), PantallaInicial.class);
                     startActivity(intent0);
                     break;
                 case 1:
