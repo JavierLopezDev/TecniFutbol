@@ -216,4 +216,7 @@ public class EditarOCrearJugador extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 }

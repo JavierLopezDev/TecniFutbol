@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.dam.tecnifutbol.MainActivity;
+import com.dam.tecnifutbol.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.R;
 
 public class SeleccionTipoPartido extends AppCompatActivity {
@@ -34,5 +36,19 @@ public class SeleccionTipoPartido extends AppCompatActivity {
             startActivity(intent);
         });
 
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

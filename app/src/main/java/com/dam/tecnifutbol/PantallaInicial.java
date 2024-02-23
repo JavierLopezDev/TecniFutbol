@@ -1,13 +1,16 @@
 package com.dam.tecnifutbol;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+import com.dam.tecnifutbol.Jugador.PantallaSeleccionEntrenamiento;
 
 public class PantallaInicial extends AppCompatActivity {
 
@@ -27,10 +30,23 @@ public class PantallaInicial extends AppCompatActivity {
 
         jugador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
-            //Intent intent = new Intent(this, PantallaJugador.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, PantallaSeleccionEntrenamiento.class);
+            startActivity(intent);
         });
 
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
 
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

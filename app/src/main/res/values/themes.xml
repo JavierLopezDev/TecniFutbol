@@ -3,7 +3,15 @@
     <style name="Base.Theme.TecniFutbol" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!--<item name="android:actionOverflowButtonStyle">@style/MyOverflowButtonStyle</item>-->
     </style>
 
     <style name="Theme.TecniFutbol" parent="Base.Theme.TecniFutbol" />
+
+    <!--<style name="MyOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:width">10dp</item>
+        <item name="android:height">10dp</item>
+        &lt;!&ndash; Cambia el icono del botón de desbordamiento &ndash;&gt;
+        <item name="android:src">@drawable/ajustes</item>
+    </style>-->
 </resources>

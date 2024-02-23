@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondodepantalla2">
 
+    <ImageButton
+        android:id="@+id/atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/atras" />
+
     <LinearLayout
         android:id="@+id/ly_entrenador"
         android:layout_width="266dp"
@@ -15,10 +26,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178">
+        app:layout_constraintVertical_bias="0.24">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -44,15 +55,15 @@
         android:id="@+id/ly_jugador"
         android:layout_width="266dp"
         android:layout_height="248dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811"
         android:background="@drawable/boton"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly_entrenador"
+        app:layout_constraintVertical_bias="0.339">
 
         <ImageView
             android:layout_width="100dp"
@@ -63,21 +74,32 @@
             android:id="@+id/et_jugador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/onest"
             android:gravity="center"
             android:text="JUGADOR"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.795"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/onest"/>
+            app:layout_constraintVertical_bias="0.795" />
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/burguer_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/burger_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
