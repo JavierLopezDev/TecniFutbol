@@ -108,12 +108,12 @@ public class ListaElegirJugadoresAdapter extends RecyclerView.Adapter<ListaElegi
                     if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("equipo 1")
                             || MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Titulares")) {
                         if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Titulares")) {
-                            maximoJugadoresSeleccionados = localDataSet.size() - maximoJugadoresSeleccionados;
+                            maximoJugadoresSeleccionados = MainActivity.maximoJugadoresTitulares;
                         }
+
                         comprobarEntreListas(MainActivity.jugadoresSuplentesSeleccionados, jugador.getDorsal(), linearLayout);
                         if (linearLayout.isClickable()) {
-
-                            comprobarJugadorTitularSeleccionado(linearLayout, jugador, MainActivity.maximoJugadoresTitulares);
+                            comprobarJugadorTitularSeleccionado(linearLayout, jugador, maximoJugadoresSeleccionados);
                         }
 
                     } else if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("equipo 2")
