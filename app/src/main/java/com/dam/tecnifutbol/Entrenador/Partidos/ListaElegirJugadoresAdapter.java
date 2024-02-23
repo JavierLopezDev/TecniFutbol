@@ -107,23 +107,23 @@ public class ListaElegirJugadoresAdapter extends RecyclerView.Adapter<ListaElegi
                     Jugador jugador = localDataSet.get(position);
                     if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("equipo 1")
                             || MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Titulares")) {
-                        if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Titulares")){
+                        if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Titulares")) {
                             maximoJugadoresSeleccionados = localDataSet.size() - maximoJugadoresSeleccionados;
                         }
-                        comprobarEntreListas(MainActivity.jugadoresSuplentesSeleccionados,jugador.getDorsal(), linearLayout);
-                        if (linearLayout.isClickable()){
+                        comprobarEntreListas(MainActivity.jugadoresSuplentesSeleccionados, jugador.getDorsal(), linearLayout);
+                        if (linearLayout.isClickable()) {
 
-                            comprobarJugadorTitularSeleccionado(linearLayout,jugador , maximoJugadoresSeleccionados);
+                            comprobarJugadorTitularSeleccionado(linearLayout, jugador, MainActivity.maximoJugadoresTitulares);
                         }
 
                     } else if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("equipo 2")
                             || MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Suplentes")) {
-                        if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Suplentes")){
-                            maximoJugadoresSeleccionados = localDataSet.size() - maximoJugadoresSeleccionados;
+                        if (MainActivity.bandoSeleccionadoEnElegirJugadores.equalsIgnoreCase("Suplentes")) {
+                            maximoJugadoresSeleccionados = localDataSet.size() - MainActivity.maximoJugadoresTitulares;
                         }
-                        comprobarEntreListas(MainActivity.jugadoresTitularesSeleccionados,jugador.getDorsal(), linearLayout);
-                        if (linearLayout.isClickable()){
-                            comprobarJugadorSuplenteSeleccionado(linearLayout,jugador, maximoJugadoresSeleccionados);
+                        comprobarEntreListas(MainActivity.jugadoresTitularesSeleccionados, jugador.getDorsal(), linearLayout);
+                        if (linearLayout.isClickable()) {
+                            comprobarJugadorSuplenteSeleccionado(linearLayout, jugador, maximoJugadoresSeleccionados);
                         }
 
                     }
@@ -135,8 +135,6 @@ public class ListaElegirJugadoresAdapter extends RecyclerView.Adapter<ListaElegi
     }
 
 
-
-
     //Se comprueba si el jugador ya ha sido seleccionado, y se saca de la lista, habra un maximo de jugadores seleccionados
     public void comprobarJugadorTitularSeleccionado(LinearLayout linearLayout, Jugador jugador, int maximoJugadores) {
         System.out.println("Comprobando titulares");
@@ -146,12 +144,12 @@ public class ListaElegirJugadoresAdapter extends RecyclerView.Adapter<ListaElegi
         if (MainActivity.jugadoresTitularesSeleccionados.contains(jugador)) {
             MainActivity.jugadoresTitularesSeleccionados.remove(jugador);
             restaurarEstiloJugador(linearLayout);
-            System.out.println("Eliminado de la lista titular : "+jugador.getDorsal());
+            System.out.println("Eliminado de la lista titular : " + jugador.getDorsal());
         } else {
             if (MainActivity.jugadoresTitularesSeleccionados.size() < maximoJugadores) {
                 MainActivity.jugadoresTitularesSeleccionados.add(jugador);
                 cambiarEstilojugadorSeleccionado(linearLayout);
-                System.out.println("Añadido a la lista titular : "+jugador.getDorsal());
+                System.out.println("Añadido a la lista titular : " + jugador.getDorsal());
             } else {
                 //Notificar al usuario que no puede seleccionar mas jugadores con un toast
                 System.out.println("No se pueden seleccionar mas jugadores en titulares");
@@ -161,7 +159,7 @@ public class ListaElegirJugadoresAdapter extends RecyclerView.Adapter<ListaElegi
         }
     }
 
-    public void comprobarJugadorSuplenteSeleccionado(LinearLayout linearLayout,Jugador jugador,  int maximoJugadores) {
+    public void comprobarJugadorSuplenteSeleccionado(LinearLayout linearLayout, Jugador jugador, int maximoJugadores) {
         System.out.println("Comprobando suplentes");
         if (MainActivity.jugadoresSuplentesSeleccionados == null) {
             MainActivity.jugadoresSuplentesSeleccionados = new ArrayList<>();
@@ -169,12 +167,12 @@ public class ListaElegirJugadoresAdapter extends RecyclerView.Adapter<ListaElegi
         if (MainActivity.jugadoresSuplentesSeleccionados.contains(jugador)) {
             MainActivity.jugadoresSuplentesSeleccionados.remove(jugador);
             restaurarEstiloJugador(linearLayout);
-            System.out.println("Eliminado de la lista de suplentes : "+jugador.getDorsal());
+            System.out.println("Eliminado de la lista de suplentes : " + jugador.getDorsal());
         } else {
             if (MainActivity.jugadoresSuplentesSeleccionados.size() < maximoJugadores) {
                 MainActivity.jugadoresSuplentesSeleccionados.add(jugador);
                 linearLayout.setBackgroundResource(R.drawable.botonseleccionadorojo);
-                System.out.println("Añadido a la lista de suplentes : "+jugador.getDorsal());
+                System.out.println("Añadido a la lista de suplentes : " + jugador.getDorsal());
             } else {
                 //Notificar al usuario que no puede seleccionar mas jugadores con un toast
                 System.out.println("No se pueden seleccionar mas jugadores en titulares");
@@ -185,18 +183,19 @@ public class ListaElegirJugadoresAdapter extends RecyclerView.Adapter<ListaElegi
     public void comprobarEntreListas(ArrayList<Jugador> listaAComprobar, String dorsalJugadorClick, LinearLayout linearLayout) {
         System.out.println("Entra a ComprobarEntreListas");
         //Recorrer la listaAComprobar
-        for (Jugador jugador : listaAComprobar) {
-            String dorsalJugador = jugador.getDorsal();
-            System.out.println(dorsalJugador+ "comprobara "+dorsalJugadorClick);
-            if (dorsalJugador == dorsalJugadorClick) {
-                linearLayout.setEnabled(false);
-                linearLayout.setClickable(false);
-                System.out.println("Deshabilitado "+dorsalJugador);
-            }
-            else {
-                linearLayout.setEnabled(true);
-                linearLayout.setClickable(true);
-                System.out.println("Habilitado "+dorsalJugador);
+        if (listaAComprobar != null) {
+            for (Jugador jugador : listaAComprobar) {
+                String dorsalJugador = jugador.getDorsal();
+                System.out.println(dorsalJugador + "comprobara " + dorsalJugadorClick);
+                if (dorsalJugador == dorsalJugadorClick) {
+                    linearLayout.setEnabled(false);
+                    linearLayout.setClickable(false);
+                    System.out.println("Deshabilitado " + dorsalJugador);
+                } else {
+                    linearLayout.setEnabled(true);
+                    linearLayout.setClickable(true);
+                    System.out.println("Habilitado " + dorsalJugador);
+                }
             }
         }
     }
