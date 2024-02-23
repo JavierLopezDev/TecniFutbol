@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol.Jugador;
+package com.dam.tecnifutbol.Adaptadores;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dam.tecnifutbol.Jugador.DetallesEntrenamientoJugador;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.EntrenamientoJugador;
 import com.dam.tecnifutbol.R;

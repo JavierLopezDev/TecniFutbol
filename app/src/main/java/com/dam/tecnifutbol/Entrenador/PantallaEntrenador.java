@@ -2,15 +2,13 @@ package com.dam.tecnifutbol.Entrenador;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import com.dam.tecnifutbol.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
 import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
 import com.dam.tecnifutbol.R;

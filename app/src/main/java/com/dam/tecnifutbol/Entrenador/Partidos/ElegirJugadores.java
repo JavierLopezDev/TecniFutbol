@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.Adaptadores.ListaElegirJugadoresAdapter;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;

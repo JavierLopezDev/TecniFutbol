@@ -2,7 +2,6 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -14,7 +13,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dam.tecnifutbol.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Adaptadores.ListaJugadoresAdapter;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;

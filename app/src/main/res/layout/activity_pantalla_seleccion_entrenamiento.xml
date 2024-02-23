@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondodepantalla2"
-    tools:context=".Jugador.PantallaSeleccionEntrenamiento">
+    tools:context=".Jugador.PantallaJugador">
 
     <ImageButton
         android:id="@+id/atras"

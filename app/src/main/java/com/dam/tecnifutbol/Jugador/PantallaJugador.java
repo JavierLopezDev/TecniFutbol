@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.dam.tecnifutbol.DialogMenuHamburguesa;
-import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.Jugador.Casa.PantallaEntrenamientoCasa;
 import com.dam.tecnifutbol.Jugador.Gimnasio.PantallaEntrenamientosGimnasio;
 import com.dam.tecnifutbol.R;
 
-public class PantallaSeleccionEntrenamiento extends AppCompatActivity {
+public class PantallaJugador extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

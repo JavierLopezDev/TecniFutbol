@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol;
+package com.dam.tecnifutbol.Dialogos;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -13,7 +13,8 @@ import androidx.fragment.app.DialogFragment;
 
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
 import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
-import com.dam.tecnifutbol.Jugador.PantallaSeleccionEntrenamiento;
+import com.dam.tecnifutbol.Jugador.PantallaJugador;
+import com.dam.tecnifutbol.PantallaInicial;
 
 public class DialogMenuHamburguesa extends DialogFragment {
     @NonNull
@@ -36,7 +37,7 @@ public class DialogMenuHamburguesa extends DialogFragment {
                     startActivity(intent1);
                     break;
                 case 2:
-                    Intent intent2 = new Intent(getActivity(), PantallaSeleccionEntrenamiento.class);
+                    Intent intent2 = new Intent(getActivity(), PantallaJugador.class);
                     startActivity(intent2);
                     break;
                 case 3:

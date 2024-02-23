@@ -1,9 +1,7 @@
-package com.dam.tecnifutbol.Entrenador;
+package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,14 +11,11 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.dam.tecnifutbol.DialogMenuHamburguesa;
-import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CrearEquipo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {

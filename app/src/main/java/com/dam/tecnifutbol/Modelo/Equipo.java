@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol.Entrenador.Partidos;
+package com.dam.tecnifutbol.Modelo;
 
 import java.io.Serializable;
 

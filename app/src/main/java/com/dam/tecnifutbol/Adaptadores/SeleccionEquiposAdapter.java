@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol.Entrenador.Partidos;
+package com.dam.tecnifutbol.Adaptadores;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,17 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam.tecnifutbol.MainActivity;
+import com.dam.tecnifutbol.Modelo.Equipo;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
 import java.util.List;
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.EquipoViewHolder> {
+public class SeleccionEquiposAdapter extends RecyclerView.Adapter<SeleccionEquiposAdapter.EquipoViewHolder> {
 
     private List<Equipo> listaEquipos;
     private Context context;
     private Equipo equipoSeleccionado;
 
-    public RecyclerViewAdapter(Context context, List<Equipo> listaEquipos) {
+    public SeleccionEquiposAdapter(Context context, List<Equipo> listaEquipos) {
         this.context = context;
         this.listaEquipos = listaEquipos;
     }

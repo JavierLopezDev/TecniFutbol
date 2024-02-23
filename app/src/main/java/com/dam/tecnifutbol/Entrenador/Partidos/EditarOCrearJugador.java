@@ -2,7 +2,6 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,14 +11,12 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.dam.tecnifutbol.DialogMenuHamburguesa;
-import com.dam.tecnifutbol.Entrenador.DialogoFecha;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Dialogos.DialogoFecha;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class EditarOCrearJugador extends AppCompatActivity {

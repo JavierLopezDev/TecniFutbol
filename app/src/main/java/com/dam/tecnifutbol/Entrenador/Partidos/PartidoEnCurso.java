@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.Modelo.Equipo;
 import com.dam.tecnifutbol.R;
 
 public class PartidoEnCurso extends AppCompatActivity {

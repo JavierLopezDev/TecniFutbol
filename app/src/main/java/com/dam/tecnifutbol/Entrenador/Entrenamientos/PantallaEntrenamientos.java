@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
-import com.dam.tecnifutbol.DialogMenuHamburguesa;
-import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+import com.dam.tecnifutbol.Adaptadores.AdaptadorEntrenamientos;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Entrenamiento;
 import com.dam.tecnifutbol.R;

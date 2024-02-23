@@ -29,7 +29,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Jugador.PantallaSeleccionEntrenamiento"
+            android:name=".Jugador.PantallaJugador"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -41,7 +41,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Entrenador.CrearEquipo"
+            android:name=".Entrenador.Partidos.CrearEquipo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

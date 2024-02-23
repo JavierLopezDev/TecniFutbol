@@ -8,7 +8,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
-import com.dam.tecnifutbol.Jugador.AdaptadorEntrenamientosJugador;
+import com.dam.tecnifutbol.Adaptadores.AdaptadorEntrenamientosJugador;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.EntrenamientoJugador;
 import com.dam.tecnifutbol.R;

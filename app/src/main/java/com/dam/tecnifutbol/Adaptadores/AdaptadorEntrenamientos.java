@@ -1,4 +1,4 @@
-package com.dam.tecnifutbol.Entrenador.Entrenamientos;
+package com.dam.tecnifutbol.Adaptadores;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dam.tecnifutbol.Entrenador.Entrenamientos.DetallesEntrenamiento;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Entrenamiento;
 import com.dam.tecnifutbol.R;

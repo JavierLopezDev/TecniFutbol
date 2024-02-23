@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.dam.tecnifutbol.MainActivity;
-import com.dam.tecnifutbol.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.R;
 
 public class SeleccionTipoPartido extends AppCompatActivity {
