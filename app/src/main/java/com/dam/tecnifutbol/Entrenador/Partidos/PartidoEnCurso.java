@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
 import android.os.Bundle;
@@ -20,6 +21,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PartidoEnCurso extends AppCompatActivity {
     private ImageView imageViewImagenEquipo1;
@@ -33,26 +37,43 @@ public class PartidoEnCurso extends AppCompatActivity {
     private TextView tv_botonMenosTiempo;
     private TextView tv_botonMasTiempo;
     private TextView tv_BotonEmpezar;
+    private TextView tv_botonMenosGolesLocal;
+    private TextView tv_botonMenosGolesVisitante;
+    private TextView tv_botonMasGolesLocal;
+    private TextView tv_botonMasGolesVisitante;
     private RecyclerView recyclerViewJugadores;
     private CountDownTimer contador;
     private boolean cuentaAtrasCorriendo = false;
     private long tiempoRestanteEnMillis = 0;
+    private int golesLocal=0;
+    private int golesVisitante=0;
+    private JugadorAdapter jugadorAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partido_en_curso);
 
+
         imageViewImagenEquipo1 = findViewById(R.id.imageview_equipo1);
         tv_NombreEquipo1 = findViewById(R.id.tv_NombreEquipo1);
-        tv_CategoriaEquipo1 = findViewById(R.id.tv_CategoriaEquipo1);
         tv_NombreEquipo2 = findViewById(R.id.tv_NombreEquipo2);
-        tv_CategoriaEquipo2 = findViewById(R.id.tv_CategoriaEquipo2);
         imageViewImagenEquipo2 = findViewById(R.id.imageview_equipo2);
         tv_Marcador = findViewById(R.id.tv_Marcador);
         tv_cronometro = findViewById(R.id.tv_Cronometro);
         tv_botonMenosTiempo = findViewById(R.id.tv_botonMenosTiempo);
         tv_botonMasTiempo = findViewById(R.id.tv_botonMasTiempo);
+
+        tv_botonMenosGolesLocal = findViewById(R.id.tv_botonMenosGolesLocal);
+        tv_botonMenosGolesLocal.setBackgroundResource(R.drawable.flechabajo);
+        tv_botonMenosGolesVisitante = findViewById(R.id.tv_botonMenosGolesVisitante);
+        tv_botonMenosGolesVisitante.setBackgroundResource(R.drawable.flechabajo);
+        tv_botonMasGolesLocal = findViewById(R.id.tv_botonMasGolesLocal);
+        tv_botonMasGolesLocal.setBackgroundResource(R.drawable.flechaarriba);
+        tv_botonMasGolesVisitante = findViewById(R.id.tv_botonMasGolesVisitante);
+        tv_botonMasGolesVisitante.setBackgroundResource(R.drawable.flechaarriba);
+
         tv_BotonEmpezar = findViewById(R.id.tv_BotonEmpezar);
         recyclerViewJugadores = findViewById(R.id.recyclerViewJugadores);
         tv_botonMenosTiempo.setBackgroundResource(R.drawable.ico_quitartiempo2);
@@ -60,6 +81,14 @@ public class PartidoEnCurso extends AppCompatActivity {
         recyclerViewJugadores = findViewById(R.id.recyclerViewJugadores);
         recyclerViewJugadores.setLayoutManager(new LinearLayoutManager(this));
 
+        List<Jugador> jugadores = new ArrayList<>();
+        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
+        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
+
+
+        // Crear y configurar el adaptador
+        jugadorAdapter = new JugadorAdapter(jugadores, MainActivity.database);
+        recyclerViewJugadores.setAdapter(jugadorAdapter);
 
         tv_BotonEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +114,45 @@ public class PartidoEnCurso extends AppCompatActivity {
                 disminuirTiempo(60000); // Disminuir en 1 minuto (60,000 ms)
             }
         });
+        tv_botonMasGolesLocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 golesLocal =golesLocal+1;
+                 golesVisitante =golesVisitante;
+                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
+                tv_Marcador.setText(marcador);
+            }
+        });
+        tv_botonMasGolesVisitante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                golesLocal =golesLocal;
+                golesVisitante =golesVisitante+1;
+                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
+                tv_Marcador.setText(marcador);
+            }
+        });
+        tv_botonMenosGolesLocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                golesLocal =golesLocal-1;
+                golesVisitante =golesVisitante;
+                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
+                tv_Marcador.setText(marcador);
+
+            }
+        });
+        tv_botonMenosGolesVisitante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                golesLocal =golesLocal;
+                golesVisitante =golesVisitante-1;
+                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
+                tv_Marcador.setText(marcador);
+            }
+        });
     }
+
 
     private void empezarCronometro() {
         contador = new CountDownTimer(tiempoRestanteEnMillis, 1000) {
@@ -123,6 +190,9 @@ public class PartidoEnCurso extends AppCompatActivity {
         int segundos = (int) (tiempoRestanteEnMillis / 1000) % 60;
         String tiempoRestante = String.format("%02d:%02d", minutos, segundos);
         tv_cronometro.setText(tiempoRestante);
+    }
+    private void actualizarMarcador() {
+
     }
 
     private void aumentarTiempo(long tiempo) {

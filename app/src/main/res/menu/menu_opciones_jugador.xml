@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_gol"
+        android:title="Gol"/>
+    <item
+        android:id="@+id/menu_falta"
+        android:title="Falta"/>
+    <item
+        android:id="@+id/menu_tarjeta_roja"
+        android:title="Tarjeta roja"/>
+    <item
+        android:id="@+id/menu_tarjeta_amarilla"
+        android:title="Tarjeta amarilla"/>
+</menu>

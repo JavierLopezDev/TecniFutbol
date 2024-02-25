@@ -9,21 +9,22 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewJugadores"
-        android:layout_width="393dp"
-        android:layout_height="267dp"
-        android:background="@android:color/transparent"
+        android:layout_width="413dp"
+        android:layout_height="310dp"
+        android:background="@android:color/holo_green_dark"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.987"
-        android:orientation="horizontal"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tv_Campo"
         android:layout_width="434dp"
         android:layout_height="27dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:text="Campo"
         android:textColor="@color/white"
@@ -67,28 +68,13 @@
         android:gravity="center"
         android:text="0-0"
         android:textColor="@android:color/white"
-        android:textSize="60dp"
+        android:textSize="54dp"
         app:layout_constraintBottom_toBottomOf="@+id/recyclerViewJugadores"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.083" />
-
-    <TextView
-        android:id="@+id/tv_CategoriaEquipo2"
-        android:layout_width="104dp"
-        android:layout_height="42dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="@android:color/white"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
         android:id="@+id/imageview_equipo1"
@@ -103,26 +89,11 @@
         app:srcCompat="@drawable/escudo" />
 
     <TextView
-        android:id="@+id/tv_CategoriaEquipo1"
-        android:layout_width="104dp"
-        android:layout_height="42dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="@android:color/white"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <TextView
         android:id="@+id/tv_NombreEquipo2"
         android:layout_width="104dp"
         android:layout_height="42dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="Visitante"
         android:textColor="@android:color/white"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -137,7 +108,7 @@
         android:layout_width="104dp"
         android:layout_height="42dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="Local"
         android:textColor="@android:color/white"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -171,6 +142,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.438" />
+
+    <TextView
+        android:id="@+id/tv_botonMenosGolesLocal"
+        android:layout_width="40dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
+        android:id="@+id/tv_botonMasGolesLocal"
+        android:layout_width="41dp"
+        android:layout_height="37dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/tv_botonMasGolesVisitante"
+        android:layout_width="46dp"
+        android:layout_height="37dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/tv_botonMenosGolesVisitante"
+        android:layout_width="46dp"
+        android:layout_height="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
 
     <TextView
         android:id="@+id/tv_botonMasTiempo"

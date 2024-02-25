@@ -3,29 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@android:color/transparent"
     app:cardElevation="4dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="412dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="16dp">
 
         <TextView
             android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30px"
+            android:text="Nombre"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="Nombre" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="Posición" />
+            android:text="Posición"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="14sp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
