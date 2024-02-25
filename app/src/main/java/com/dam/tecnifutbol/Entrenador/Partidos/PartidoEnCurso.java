@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -80,6 +81,12 @@ public class PartidoEnCurso extends AppCompatActivity {
         tv_botonMasTiempo.setBackgroundResource(R.drawable.ico_aumentartiempo2);
         recyclerViewJugadores = findViewById(R.id.recyclerViewJugadores);
         recyclerViewJugadores.setLayoutManager(new LinearLayoutManager(this));
+
+
+        // recoger el arraylist de jugadores del otro intent
+        Intent intent = getIntent();
+        ArrayList<Jugador> arrayJugadores = (ArrayList<Jugador>) intent.getSerializableExtra("listaJugadores");
+
 
         List<Jugador> jugadores = new ArrayList<>();
         jugadores.add(new Jugador("Lionel Messi", "Delantero"));
