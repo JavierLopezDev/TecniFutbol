@@ -46,9 +46,7 @@ public class SeleccionDeEquipos extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         ib_CrearEquipo.setOnClickListener(v -> {
-          //  Intent intent = new Intent(this, CrearEquipo.class);
-
-           Intent intent = new Intent(this, PartidoEnCurso.class);
+           Intent intent = new Intent(this, CrearEquipo.class);
             startActivity(intent);
         });
 

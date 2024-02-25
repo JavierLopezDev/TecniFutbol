@@ -122,6 +122,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, lugar TEXT, repeticiones TEXT, nota TEXT, imagen BLOB, video TEXT)");
         insertarEntrenamientosJugador();
 
+        database.execSQL("CREATE TABLE IF NOT EXISTS estadisticas_jugador " +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, jugador TEXT,goles INTEGER,tarjetasRojas INTEGER,tarjetaAmarillas INTEGER,faltasRealizadas INTEGER)");
+
         menuHaburguesa = findViewById(R.id.burguer_menu);
         menuHaburguesa.setOnClickListener(v -> {
             DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
@@ -129,6 +132,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         menuHaburguesa.setVisibility(View.GONE);
     }
+
+
 
     /**
      * Inserta en la BD los entrenamientos de las diferentes categorías de edad.
