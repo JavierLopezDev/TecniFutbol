@@ -12,11 +12,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Jugador.InsertarEntrenamientosJugador;
 import com.dam.tecnifutbol.Modelo.Jugador;
-import com.dam.tecnifutbol.R;
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.InsertarEntrenamientos;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -32,6 +34,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static SQLiteDatabase database;
     public static String nombreEntrenamiento;
@@ -46,6 +50,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int jugadorSeleccionadoAEditarOEliminar;
     public static String fechaNacJugadorInsertado;
     public static Jugador jugadorSeleccionadoAEditar = null;
+    public static String nombreEntrJug;
+    public static String descripcionEntrJug;
+    public static String lugarEntrJug;
+    public static String repeticionesEntrJug;
+    public static String notaEntrJug;
+    public static int imagenEntrJug;
+    public static String videoEntrJug;
+
+    public static ArrayList<Jugador> jugadoresTitularesSeleccionados;
+    public static ArrayList<Jugador> jugadoresSuplentesSeleccionados;
+    public static String tipoPartido;
+    public static int maximoJugadoresTitulares;
+
+    public static String bandoSeleccionadoEnElegirJugadores;
 
     SignInButton signInButton;
     TextView signOutButton;
@@ -53,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int SIGN_IN = 123;
     public static FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
+    private ImageButton menuHaburguesa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,9 +117,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, equipo TEXT, nombre TEXT, dorsal TEXT, posicion TEXT, peso TEXT, altura TEXT, fechaNacimiento DATE, " +
                 "piernaHabil TEXT, notas TEXT, disponible BOOLEAN)");
 
-        database.execSQL("CREATE TABLE IF NOT EXISTS estadisticas_jugador " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT, jugador TEXT,goles INTEGER,tarjetasRojas INTEGER,tarjetaAmarillas INTEGER,faltasRealizadas INTEGER)");
+        database.execSQL("DROP TABLE IF EXISTS entrenamientosJugador");
+        database.execSQL("CREATE TABLE IF NOT EXISTS entrenamientosJugador " +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT, lugar TEXT, repeticiones TEXT, nota TEXT, imagen BLOB, video TEXT)");
+        insertarEntrenamientosJugador();
 
+        menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+        menuHaburguesa.setVisibility(View.GONE);
     }
 
     /**
@@ -115,6 +142,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             InsertarEntrenamientos.insertarEntrenamientosDe11A14Años();
             InsertarEntrenamientos.insertarEntrenamientosDe14A18Años();
             InsertarEntrenamientos.insertarEntrenamientosDeMas18Años();
+        }
+    }
+
+    private void insertarEntrenamientosJugador() {
+        Cursor cursor = database.rawQuery("SELECT * FROM entrenamientosJugador", null);
+
+        if (cursor.getCount() == 0) {
+            InsertarEntrenamientosJugador.insertarEntrenamientosEnCasa();
+            InsertarEntrenamientosJugador.insertarEntrenamientosEnGym();
         }
     }
 
@@ -183,9 +219,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     + "[" + user.getEmail() + "]", Toast.LENGTH_LONG).show();
             signInButton.setVisibility(View.GONE);
             signOutButton.setVisibility(View.VISIBLE);
+            menuHaburguesa.setVisibility(View.VISIBLE);
         } else {
             signInButton.setVisibility(View.VISIBLE);
             signOutButton.setVisibility(View.GONE);
+            menuHaburguesa.setVisibility(View.GONE);
             tv_iniciarSesion.setText("Inicia Sesion");
         }
     }
@@ -211,5 +249,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

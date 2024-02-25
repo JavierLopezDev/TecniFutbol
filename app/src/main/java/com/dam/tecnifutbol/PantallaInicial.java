@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+import com.dam.tecnifutbol.Jugador.PantallaJugador;
 
 public class PantallaInicial extends AppCompatActivity {
 
@@ -27,10 +29,23 @@ public class PantallaInicial extends AppCompatActivity {
 
         jugador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de login
-            //Intent intent = new Intent(this, PantallaJugador.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, PantallaJugador.class);
+            startActivity(intent);
         });
 
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
 
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

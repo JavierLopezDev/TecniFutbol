@@ -7,43 +7,55 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TecniFutbol"
         tools:targetApi="31">
         <activity
-            android:name=".Entrenador.Partidos.PartidoEnCurso"
+            android:name=".Jugador.Gimnasio.PantallaEntrenamientosGimnasio"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Jugador.PantallaSeleccionEntrenamiento"
+            android:name=".Jugador.DetallesEntrenamientoJugador"
             android:exported="false"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Jugador.Casa.PantallaEntrenamientoCasa"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Entrenador.Partidos.PartidoEnCurso"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Jugador.PantallaJugador"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Entrenador.Partidos.EditarOCrearJugador"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Entrenador.Partidos.EditarEquipo"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name=".Entrenador.CrearEquipo"
+            android:name=".Entrenador.Partidos.CrearEquipo"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Entrenador.Partidos.SeleccionTipoPartido"
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".Entrenador.Partidos.SeleccionTipoPartido"
+        <activity android:name=".Entrenador.Partidos.ElegirJugadores"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Entrenador.Entrenamientos.PantallaEntrenamientos"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".PantallaInicial"
             android:exported="false"

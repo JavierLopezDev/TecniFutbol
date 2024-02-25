@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -35,6 +36,11 @@ public class DetallesEntrenamiento extends AppCompatActivity {
         tipoEntrenamiento = findViewById(R.id.tipoEntrenamiento);
 
         cargarDatosEntrenamiento();
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     /**
@@ -51,5 +57,9 @@ public class DetallesEntrenamiento extends AppCompatActivity {
         videoView.setVideoPath(MainActivity.videoEntrenamiento);
         videoView.setOnPreparedListener(mp -> mp.setLooping(true));
         videoView.start();
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

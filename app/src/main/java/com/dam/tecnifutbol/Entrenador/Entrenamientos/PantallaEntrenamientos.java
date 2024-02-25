@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
+import com.dam.tecnifutbol.Adaptadores.AdaptadorEntrenamientos;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Entrenamiento;
 import com.dam.tecnifutbol.R;
@@ -26,6 +28,11 @@ public class PantallaEntrenamientos extends AppCompatActivity {
 
         obtenerEntrenamientos();
         iniciarRecyclerView();
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     /**
@@ -61,5 +68,9 @@ public class PantallaEntrenamientos extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         myAdapter = new AdaptadorEntrenamientos(entrenamientos);
         recyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

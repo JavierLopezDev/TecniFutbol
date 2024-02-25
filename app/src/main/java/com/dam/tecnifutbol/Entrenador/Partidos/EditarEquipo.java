@@ -2,7 +2,6 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -14,6 +13,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.Adaptadores.ListaJugadoresAdapter;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;
@@ -64,6 +65,16 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         });
 
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     public void consultarJugadores(String equipoABuscar) {
@@ -114,5 +125,9 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
             else
                 linearLayout.setBackgroundResource(R.drawable.botonseleccionado);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

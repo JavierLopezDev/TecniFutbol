@@ -2,7 +2,6 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,13 +11,12 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.dam.tecnifutbol.Entrenador.DialogoFecha;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Dialogos.DialogoFecha;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class EditarOCrearJugador extends AppCompatActivity {
@@ -102,15 +100,26 @@ public class EditarOCrearJugador extends AppCompatActivity {
         tvAceptar.setOnClickListener(v -> {
             comprobarCampos();
             TextView tv_siError = findViewById(R.id.tv_SiError);
-            if (tv_siError.getText().toString().isEmpty()){
+            if (tv_siError.getText().toString().isEmpty()) {
                 insertarOEditarJugador();
-                Intent intent = new Intent(this, EditarEquipo.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(this, EditarEquipo.class);
+                startActivity(intent);*/
+                finish();
             }
 
 
         });
 
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     public void clickFecha() {
@@ -216,4 +225,7 @@ public class EditarOCrearJugador extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 }

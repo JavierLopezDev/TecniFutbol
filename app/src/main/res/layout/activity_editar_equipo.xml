@@ -8,6 +8,28 @@
     tools:context=".Entrenador.Partidos.EditarEquipo">
 
     <ImageButton
+        android:id="@+id/atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/atras" />
+
+    <ImageButton
+        android:id="@+id/burguer_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/burger_menu" />
+
+    <ImageButton
         android:id="@+id/imageButton_NuevoJugador"
         android:layout_width="46dp"
         android:layout_height="47dp"
@@ -40,6 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
+        android:textSize="22sp"
         android:text="JUGADORES"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

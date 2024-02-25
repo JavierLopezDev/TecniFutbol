@@ -2,7 +2,6 @@ package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,15 +11,17 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dam.tecnifutbol.Entrenador.CrearEquipo;
+import com.dam.tecnifutbol.Adaptadores.SeleccionEquiposAdapter;
+import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
 import com.dam.tecnifutbol.MainActivity;
+import com.dam.tecnifutbol.Modelo.Equipo;
 import com.dam.tecnifutbol.R;
 
 import java.util.ArrayList;
 import java.util.List;
 public class SeleccionDeEquipos extends AppCompatActivity {
 
-    private RecyclerViewAdapter adapter;
+    private SeleccionEquiposAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class SeleccionDeEquipos extends AppCompatActivity {
 
         List<Equipo> listaEquipos = obtenerEquiposDesdeBD();
 
-        adapter = new RecyclerViewAdapter(this, listaEquipos);
+        adapter = new SeleccionEquiposAdapter(this, listaEquipos);
 
 
         TextView tv_Editar = findViewById(R.id.tv_Editar);
@@ -76,6 +77,17 @@ public class SeleccionDeEquipos extends AppCompatActivity {
                 Toast.makeText(this, "Por favor, seleccione exactamente 1 equipos para el partido", Toast.LENGTH_SHORT).show();
             }
         });
+
+        ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
+        menuHaburguesa.setOnClickListener(v -> {
+            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
+            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+        });
+
+        ImageButton atras = findViewById(R.id.atras);
+        atras.setOnClickListener(v -> {
+            finish();
+        });
     }
     @Override
     protected void onResume() {
@@ -106,5 +118,9 @@ public class SeleccionDeEquipos extends AppCompatActivity {
 
         cursor.close();
         return equipos;
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }
