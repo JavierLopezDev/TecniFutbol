@@ -10,11 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.dam.tecnifutbol.Adaptadores.ListaElegirJugadoresAdapter;
+import com.dam.tecnifutbol.Dialogos.DialogoAjustesPartido;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;
@@ -32,13 +34,18 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elegir_jugadores);
 
+        ImageButton ib_ajustesPartido = findViewById(R.id.imageButton_configuracion);
+
         if (MainActivity.tipoPartido.equals("Entrenamiento")){
             paraPartidoEntrenamiento();
         }else if (MainActivity.tipoPartido.equals("VS Equipo")){
             paraPartidoVSEquipo();
         }
 
-
+        ib_ajustesPartido.setOnClickListener(v -> {
+            DialogoAjustesPartido dialogoAjustesPartido = new DialogoAjustesPartido();
+            dialogoAjustesPartido.show(getSupportFragmentManager(), "dialogoAjustesPartido");
+        });
 
     }
     public void paraPartidoEntrenamiento(){

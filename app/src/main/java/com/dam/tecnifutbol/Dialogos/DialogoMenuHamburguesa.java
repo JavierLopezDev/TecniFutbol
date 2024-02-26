@@ -16,7 +16,7 @@ import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
 import com.dam.tecnifutbol.Jugador.PantallaJugador;
 import com.dam.tecnifutbol.PantallaInicial;
 
-public class DialogMenuHamburguesa extends DialogFragment {
+public class DialogoMenuHamburguesa extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
