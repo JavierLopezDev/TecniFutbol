@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int maximoJugadoresTitulares;
 
     public static String bandoSeleccionadoEnElegirJugadores;
-    public static int partesPartido;
-    public static int duracionParte;
+    public static String partesPartido = "2";
+    public static String duracionParte = "45";
 
     SignInButton signInButton;
     TextView signOutButton;

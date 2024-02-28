@@ -34,13 +34,13 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elegir_jugadores);
 
-        ImageButton ib_ajustesPartido = findViewById(R.id.imageButton_configuracion);
-
         if (MainActivity.tipoPartido.equals("Entrenamiento")){
             paraPartidoEntrenamiento();
         }else if (MainActivity.tipoPartido.equals("VS Equipo")){
             paraPartidoVSEquipo();
         }
+
+        ImageButton ib_ajustesPartido = findViewById(R.id.imageButton_configuracion);
 
         ib_ajustesPartido.setOnClickListener(v -> {
             DialogoAjustesPartido dialogoAjustesPartido = new DialogoAjustesPartido();

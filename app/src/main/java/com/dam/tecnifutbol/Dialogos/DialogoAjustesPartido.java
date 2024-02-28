@@ -15,6 +15,7 @@ import androidx.fragment.app.DialogFragment;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
+import java.util.Objects;
 import java.util.zip.Inflater;
 
 public class DialogoAjustesPartido extends DialogFragment {
@@ -28,22 +29,22 @@ public class DialogoAjustesPartido extends DialogFragment {
         View vistaAjustes = inflater.inflate(R.layout.dialogo_ajustes_partido, null);
         builder.setView(vistaAjustes);
 
-        EditText etPartesPartido = getActivity().findViewById(R.id.et_partesPartido);
-        EditText etDuracionParte = getActivity().findViewById(R.id.et_duracionPartes);
-
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                MainActivity.partesPartido = Integer.parseInt(etPartesPartido.getText().toString());
-                MainActivity.duracionParte = Integer.parseInt(etDuracionParte.getText().toString());
+                EditText etPartesPartido = vistaAjustes.findViewById(R.id.et_partesPartido);
+                EditText etDuracionParte = vistaAjustes.findViewById(R.id.et_duracionPartes);
+
+                MainActivity.partesPartido = String.valueOf(etPartesPartido.getText());
+                MainActivity.duracionParte = String.valueOf(etDuracionParte.getText());
             }
         });
 
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                MainActivity.partesPartido = 2;
-                MainActivity.duracionParte = 45;
+                MainActivity.partesPartido = "2";
+                MainActivity.duracionParte = "45";
             }
         });
 
