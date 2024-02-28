@@ -1,5 +1,6 @@
 package com.dam.tecnifutbol.Entrenador.Partidos;
 
+import static com.dam.tecnifutbol.MainActivity.jugadoresTitularesSeleccionados;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,18 +12,14 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dam.tecnifutbol.Adaptadores.ListaJugadoresAdapter;
 import com.dam.tecnifutbol.MainActivity;
+import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.R;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +46,7 @@ public class PartidoEnCurso extends AppCompatActivity {
     private int golesLocal=0;
     private int golesVisitante=0;
     private JugadorAdapter jugadorAdapter;
+
 
 
     @Override
@@ -83,19 +81,10 @@ public class PartidoEnCurso extends AppCompatActivity {
         recyclerViewJugadores.setLayoutManager(new LinearLayoutManager(this));
 
 
-        // recoger el arraylist de jugadores del otro intent
-        Intent intent = getIntent();
-        ArrayList<Jugador> arrayJugadores = (ArrayList<Jugador>) intent.getSerializableExtra("listaJugadores");
-
-
-        List<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(new Jugador("Lionel Messi", "Delantero"));
-        jugadores.add(new Jugador("Cristiano Ronaldo", "Delantero"));
-
-
-        // Crear y configurar el adaptador
-        jugadorAdapter = new JugadorAdapter(jugadores, MainActivity.database);
+        List<JugadorEstadisticas> estadisticasJugadores = convertirAJugadorEstadisticas(jugadoresTitularesSeleccionados);
+        jugadorAdapter = new JugadorAdapter(estadisticasJugadores, MainActivity.database);
         recyclerViewJugadores.setAdapter(jugadorAdapter);
+
 
         tv_BotonEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +147,14 @@ public class PartidoEnCurso extends AppCompatActivity {
                 tv_Marcador.setText(marcador);
             }
         });
+    }
+    private List<JugadorEstadisticas> convertirAJugadorEstadisticas(List<Jugador> jugadores) {
+        List<JugadorEstadisticas> estadisticasJugadores = new ArrayList<>();
+        for (Jugador jugador : jugadores) {
+            JugadorEstadisticas jugadorEstadisticas = new JugadorEstadisticas(jugador.getNombre(), jugador.getPosicion());
+            estadisticasJugadores.add(jugadorEstadisticas);
+        }
+        return estadisticasJugadores;
     }
 
 

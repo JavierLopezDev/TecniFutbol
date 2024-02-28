@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -90,6 +91,8 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
 
         TextView tv_aceptarIrAPartido = findViewById(R.id.tv_aceptarIrAPartido);
         tv_aceptarIrAPartido.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PartidoEnCurso.class);
+            startActivity(intent);
 
         });
         TextView tv_volverAElegirEquipo = findViewById(R.id.tv_volverAElegirEquipo);
@@ -152,6 +155,8 @@ public class ElegirJugadores extends AppCompatActivity implements  AdapterView.O
         });
         TextView tv_aceptarIrAPartido = findViewById(R.id.tv_aceptarIrAPartido);
         tv_aceptarIrAPartido.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PartidoEnCurso.class);
+            startActivity(intent);
 
         });
         TextView tv_volverAElegirEquipo = findViewById(R.id.tv_volverAElegirEquipo);

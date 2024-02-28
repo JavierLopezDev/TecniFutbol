@@ -25,10 +25,10 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.ViewHold
     private static final int MENU_TARJETA_AMARILLA = R.id.menu_tarjeta_amarilla;
     private SQLiteDatabase database; // Agrega esta variable para acceder a la base de datos SQLite
 
-    private List<Jugador> jugadores;
-    private Jugador jugadorSeleccionado;
+    private List<JugadorEstadisticas> jugadores;
+    private JugadorEstadisticas jugadorSeleccionado;
 
-    public JugadorAdapter(List<Jugador> jugadores, SQLiteDatabase database) {
+    public JugadorAdapter(List<JugadorEstadisticas> jugadores, SQLiteDatabase database) {
         this.jugadores = jugadores;
         this.database = database;
     }
@@ -42,7 +42,7 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Jugador jugador = jugadores.get(position);
+        JugadorEstadisticas jugador = jugadores.get(position);
         holder.textViewName.setText(jugador.getNombre());
         holder.textViewPosition.setText(jugador.getPosicion());
     }
@@ -66,14 +66,14 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.ViewHold
                 public void onClick(View v) {
                     int adapterPosition = getAdapterPosition();
                     if (adapterPosition != RecyclerView.NO_POSITION) {
-                        Jugador jugadorSeleccionado = jugadores.get(adapterPosition);
+                        JugadorEstadisticas jugadorSeleccionado = jugadores.get(adapterPosition);
                         mostrarMenuOpciones(v, jugadorSeleccionado);
                     }
                 }
             });
         }
 
-        private void mostrarMenuOpciones(View view, Jugador jugadorSeleccionado) {
+        private void mostrarMenuOpciones(View view, JugadorEstadisticas jugadorSeleccionado) {
             PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
             popupMenu.inflate(R.menu.menu_opciones_jugador);
             popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -106,7 +106,7 @@ public class JugadorAdapter extends RecyclerView.Adapter<JugadorAdapter.ViewHold
 
 
 
-        private void actualizarEstadisticas(Jugador jugador, String columna, int nuevoValor) {
+        private void actualizarEstadisticas(JugadorEstadisticas jugador, String columna, int nuevoValor) {
             String jugadorNombre = jugador.getNombre();
             Cursor cursor = database.rawQuery("SELECT * FROM estadisticas_jugador WHERE jugador = ?", new String[]{jugadorNombre});
             if (cursor.moveToFirst()) {

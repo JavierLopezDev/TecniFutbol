@@ -1,6 +1,6 @@
 package com.dam.tecnifutbol.Entrenador.Partidos;
 
-public class Jugador {
+public class JugadorEstadisticas {
     private String nombre;
     private String posicion;
     private int goles;
@@ -8,7 +8,7 @@ public class Jugador {
     private int tarjetaAmarilla;
     private int faltasRealizadas;
 
-    public Jugador(String nombre, String posicion, int goles, int tarjetaRoja, int tarjetaAmarilla) {
+    public JugadorEstadisticas(String nombre, String posicion, int goles, int tarjetaRoja, int tarjetaAmarilla) {
         this.nombre = nombre;
         this.posicion = posicion;
         this.goles = goles;
@@ -16,7 +16,7 @@ public class Jugador {
         this.tarjetaAmarilla = tarjetaAmarilla;
     }
 
-    public Jugador(String nombre, String posicion, int goles, int tarjetaRoja, int tarjetaAmarilla, int faltasRealizadas) {
+    public JugadorEstadisticas(String nombre, String posicion, int goles, int tarjetaRoja, int tarjetaAmarilla, int faltasRealizadas) {
         this.nombre = nombre;
         this.posicion = posicion;
         this.goles = goles;
@@ -65,7 +65,7 @@ public class Jugador {
         this.tarjetaAmarilla = tarjetaAmarilla;
     }
 
-    public Jugador(String nombre, String posicion) {
+    public JugadorEstadisticas(String nombre, String posicion) {
         this.nombre = nombre;
         this.posicion = posicion;
     }
