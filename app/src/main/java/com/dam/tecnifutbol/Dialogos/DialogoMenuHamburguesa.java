@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
 import com.dam.tecnifutbol.Entrenador.PantallaEntrenador;
+import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
 import com.dam.tecnifutbol.Jugador.PantallaJugador;
 import com.dam.tecnifutbol.PantallaInicial;
 
@@ -20,7 +21,7 @@ public class DialogoMenuHamburguesa extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        String[] actividades = {"Incio", "Entrenador", "Jugador", "Entrenamientos"};
+        String[] actividades = {"Incio", "Entrenador", "Jugador", "Entrenamientos", "Partidos"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, actividades);
 
@@ -43,6 +44,10 @@ public class DialogoMenuHamburguesa extends DialogFragment {
                 case 3:
                     Intent intent3 = new Intent(getActivity(), PantallaEntrenamientos.class);
                     startActivity(intent3);
+                    break;
+                case 4:
+                    Intent intent4 = new Intent(getActivity(), SeleccionDeEquipos.class);
+                    startActivity(intent4);
                     break;
             }
         });
