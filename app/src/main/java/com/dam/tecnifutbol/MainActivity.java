@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String notaEntrJug;
     public static int imagenEntrJug;
     public static String videoEntrJug;
+    public static boolean clicadoEditar = false;
 
     public static ArrayList<Jugador> jugadoresTitularesSeleccionados;
     public static ArrayList<Jugador> jugadoresSuplentesSeleccionados;

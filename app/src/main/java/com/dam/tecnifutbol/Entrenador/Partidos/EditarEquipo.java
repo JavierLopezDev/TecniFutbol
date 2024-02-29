@@ -33,13 +33,12 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
         System.out.println("Equipo seleccionado a editar: " + MainActivity.equipoSeleccionadoAEditar);
         listaJugadores = new ArrayList<>();
         RecyclerView recyclerViewJugadores = findViewById(R.id.rv_jugadores);
-        recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3 ));
+        recyclerViewJugadores.setLayoutManager(new GridLayoutManager(this, 3));
 
         consultarJugadores(MainActivity.equipoSeleccionadoAEditar);
 
         ListaJugadoresAdapter adapter = new ListaJugadoresAdapter(listaJugadores);
         recyclerViewJugadores.setAdapter(adapter);
-
 
         TextView tv_EditarJugador = findViewById(R.id.tv_editarJugador);
         TextView tv_EliminarJugador = findViewById(R.id.tv_eliminarJugador);
@@ -53,7 +52,7 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
         });
         tv_EditarJugador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de editar jugador
-
+            MainActivity.clicadoEditar = true;
             Intent intent = new Intent(this, EditarOCrearJugador.class);
             startActivity(intent);
         });
@@ -61,6 +60,7 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
         ibCrearJugador.setOnClickListener(v -> {
             //Nos movemos a la pantalla de crear jugador
             MainActivity.jugadorSeleccionadoAEditar = null;
+            MainActivity.clicadoEditar = false;
             Intent intent = new Intent(this, EditarOCrearJugador.class);
             startActivity(intent);
         });
@@ -73,6 +73,7 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
 
         ImageButton atras = findViewById(R.id.atras);
         atras.setOnClickListener(v -> {
+            MainActivity.jugadorSeleccionadoAEditar = null;
             finish();
         });
     }
@@ -83,35 +84,36 @@ public class EditarEquipo extends AppCompatActivity implements View.OnClickListe
         if (cursor.getCount() == 0)
             System.out.println("No hay jugadores en la base de datos");
         else {
-        while (cursor.moveToNext()) {
-            int id = cursor.getInt(0);
-            String equipo = cursor.getString(1);
-            String nombre = cursor.getString(2);
-            String dorsal = cursor.getString(3);
-            String posicion = cursor.getString(4);
-            String peso = cursor.getString(5);
-            String altura = cursor.getString(6);
-            String fechaNacimiento = cursor.getString(7);
-            String piernaHabil = cursor.getString(8);
-            String notas = cursor.getString(9);
-            int disponible = cursor.getInt(10);
-            boolean disponibleBoolean = false;
-            if (disponible == 1) {
-                disponibleBoolean = true;
+            while (cursor.moveToNext()) {
+                int id = cursor.getInt(0);
+                String equipo = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String dorsal = cursor.getString(3);
+                String posicion = cursor.getString(4);
+                String peso = cursor.getString(5);
+                String altura = cursor.getString(6);
+                String fechaNacimiento = cursor.getString(7);
+                String piernaHabil = cursor.getString(8);
+                String notas = cursor.getString(9);
+                int disponible = cursor.getInt(10);
+                boolean disponibleBoolean = false;
+                if (disponible == 1) {
+                    disponibleBoolean = true;
+                }
+
+
+                Jugador jugador = new Jugador(id, equipo, nombre, dorsal, posicion, peso, altura, fechaNacimiento, piernaHabil, notas, disponibleBoolean);
+                listaJugadores.add(jugador);
             }
-
-
-            Jugador jugador = new Jugador(id, equipo, nombre, dorsal, posicion, peso, altura, fechaNacimiento, piernaHabil, notas, disponibleBoolean);
-            listaJugadores.add(jugador);
-        }
-        //Odernar la lista de menor a mayor por su dorsal
-        listaJugadores.sort((o1, o2) -> {
-            int dorsal1 = Integer.parseInt(o1.getDorsal());
-            int dorsal2 = Integer.parseInt(o2.getDorsal());
-            return Integer.compare(dorsal1, dorsal2);
-        });
+            //Odernar la lista de menor a mayor por su dorsal
+            listaJugadores.sort((o1, o2) -> {
+                int dorsal1 = Integer.parseInt(o1.getDorsal());
+                int dorsal2 = Integer.parseInt(o2.getDorsal());
+                return Integer.compare(dorsal1, dorsal2);
+            });
         }
     }
+
     public void eliminarJugador() {
         MainActivity.database.execSQL("DELETE FROM jugadores WHERE id = " + MainActivity.jugadorSeleccionadoAEditarOEliminar);
     }
