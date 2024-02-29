@@ -1,6 +1,7 @@
 package com.dam.tecnifutbol.Entrenador.Partidos;
 
 import static com.dam.tecnifutbol.MainActivity.jugadoresTitularesSeleccionados;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +21,7 @@ import com.dam.tecnifutbol.R;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,10 +45,9 @@ public class PartidoEnCurso extends AppCompatActivity {
     private CountDownTimer contador;
     private boolean cuentaAtrasCorriendo = false;
     private long tiempoRestanteEnMillis = 0;
-    private int golesLocal=0;
-    private int golesVisitante=0;
+    private int golesLocal = 0;
+    private int golesVisitante = 0;
     private JugadorAdapter jugadorAdapter;
-
 
 
     @Override
@@ -113,41 +114,45 @@ public class PartidoEnCurso extends AppCompatActivity {
         tv_botonMasGolesLocal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 golesLocal =golesLocal+1;
-                 golesVisitante =golesVisitante;
-                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
+                golesLocal = golesLocal + 1;
+                golesVisitante = golesVisitante;
+                String marcador = String.format("%2d:%2d", golesLocal, golesVisitante);
                 tv_Marcador.setText(marcador);
             }
         });
         tv_botonMasGolesVisitante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                golesLocal =golesLocal;
-                golesVisitante =golesVisitante+1;
-                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
+                golesLocal = golesLocal;
+                golesVisitante = golesVisitante + 1;
+                String marcador = String.format("%2d:%2d", golesLocal, golesVisitante);
                 tv_Marcador.setText(marcador);
             }
         });
         tv_botonMenosGolesLocal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                golesLocal =golesLocal-1;
-                golesVisitante =golesVisitante;
-                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
-                tv_Marcador.setText(marcador);
-
+                if (golesLocal > 0) {
+                    golesLocal = golesLocal - 1;
+                    golesVisitante = golesVisitante;
+                    String marcador = String.format("%2d:%2d", golesLocal, golesVisitante);
+                    tv_Marcador.setText(marcador);
+                }
             }
         });
         tv_botonMenosGolesVisitante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                golesLocal =golesLocal;
-                golesVisitante =golesVisitante-1;
-                String marcador = String.format("%2d:%2d", golesLocal,golesVisitante);
-                tv_Marcador.setText(marcador);
+                if (golesVisitante > 0) {
+                    golesLocal = golesLocal;
+                    golesVisitante = golesVisitante - 1;
+                    String marcador = String.format("%2d:%2d", golesLocal, golesVisitante);
+                    tv_Marcador.setText(marcador);
+                }
             }
         });
     }
+
     private List<JugadorEstadisticas> convertirAJugadorEstadisticas(List<Jugador> jugadores) {
         List<JugadorEstadisticas> estadisticasJugadores = new ArrayList<>();
         for (Jugador jugador : jugadores) {
@@ -195,6 +200,7 @@ public class PartidoEnCurso extends AppCompatActivity {
         String tiempoRestante = String.format("%02d:%02d", minutos, segundos);
         tv_cronometro.setText(tiempoRestante);
     }
+
     private void actualizarMarcador() {
 
     }
@@ -211,6 +217,7 @@ public class PartidoEnCurso extends AppCompatActivity {
         }
         actualizarCronometro();
     }
+
     private void mostrarDialogoPartidoFinalizado() {
         String marcador = tv_Marcador.getText().toString();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
