@@ -21,6 +21,8 @@ import com.dam.tecnifutbol.R;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,16 +46,28 @@ public class PartidoEnCurso extends AppCompatActivity {
     private RecyclerView recyclerViewJugadores;
     private CountDownTimer contador;
     private boolean cuentaAtrasCorriendo = false;
-    private long tiempoRestanteEnMillis = 0;
-    private int golesLocal = 0;
-    private int golesVisitante = 0;
+    private long tiempoRestanteEnMillis;
+    private int golesLocal=0;
+    private int golesVisitante=0;
     private JugadorAdapter jugadorAdapter;
+    private String partes=null;
+    private String tiempo=null;
+    public long duracionMillis;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partido_en_curso);
+        duracionMillis=0;
+        partes=MainActivity.partesPartido;
+        tiempo=MainActivity.duracionParte;
+
+        int numPartes = Integer.parseInt(partes);
+        long duracionPartidoMillis = Long.parseLong(tiempo);
+        long duracionTotalMinutos = numPartes * duracionPartidoMillis;
+        duracionMillis = duracionTotalMinutos * 60 * 1000;
 
 
         imageViewImagenEquipo1 = findViewById(R.id.imageview_equipo1);
@@ -85,7 +99,7 @@ public class PartidoEnCurso extends AppCompatActivity {
         List<JugadorEstadisticas> estadisticasJugadores = convertirAJugadorEstadisticas(jugadoresTitularesSeleccionados);
         jugadorAdapter = new JugadorAdapter(estadisticasJugadores, MainActivity.database);
         recyclerViewJugadores.setAdapter(jugadorAdapter);
-
+        contadorInicial(duracionMillis);
 
         tv_BotonEmpezar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -203,7 +217,15 @@ public class PartidoEnCurso extends AppCompatActivity {
 
     private void actualizarMarcador() {
 
+    private void contadorInicial(long duracionMillis) {
+        int minutos = (int) (duracionMillis / 1000) / 60;
+        int segundos = (int) (duracionMillis / 1000) % 60;
+        String tiempoRestante = String.format("%02d:%02d", minutos, segundos);
+        tv_cronometro.setText(tiempoRestante);
+        tiempoRestanteEnMillis = duracionMillis;
+        actualizarCronometro();
     }
+
 
     private void aumentarTiempo(long tiempo) {
         tiempoRestanteEnMillis += tiempo;
