@@ -6,24 +6,24 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label=""
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/logo_tecnifutbol"
+        android:label="TecniFutbol"
+        android:roundIcon="@drawable/logo_tecnifutbol"
         android:supportsRtl="true"
         android:theme="@style/Theme.TecniFutbol"
         tools:targetApi="31">
         <activity
             android:name=".Jugador.Gimnasio.PantallaEntrenamientosGimnasio"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Jugador.DetallesEntrenamientoJugador"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Jugador.Casa.PantallaEntrenamientoCasa"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Entrenador.Partidos.PartidoEnCurso"
             android:exported="false"
@@ -49,7 +49,8 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".Entrenador.Partidos.ElegirJugadores"
+        <activity
+            android:name=".Entrenador.Partidos.ElegirJugadores"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

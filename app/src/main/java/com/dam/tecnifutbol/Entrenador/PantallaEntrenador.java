@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Dialogos.DialogoMenuHamburguesa;
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.PantallaEntrenamientos;
 import com.dam.tecnifutbol.Entrenador.Partidos.SeleccionDeEquipos;
 import com.dam.tecnifutbol.R;
@@ -39,8 +39,8 @@ public class PantallaEntrenador extends AppCompatActivity {
 
         ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
         menuHaburguesa.setOnClickListener(v -> {
-            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
-            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+            DialogoMenuHamburguesa dialogoMenuHamburguesa = new DialogoMenuHamburguesa();
+            dialogoMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
         });
 
         ImageButton atras = findViewById(R.id.atras);

@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Dialogos.DialogoMenuHamburguesa;
 import com.dam.tecnifutbol.MainActivity;
 import com.dam.tecnifutbol.R;
 
@@ -42,8 +42,8 @@ public class CrearEquipo extends AppCompatActivity implements AdapterView.OnItem
 
         ImageButton menuHaburguesa = findViewById(R.id.burguer_menu);
         menuHaburguesa.setOnClickListener(v -> {
-            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
-            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+            DialogoMenuHamburguesa dialogoMenuHamburguesa = new DialogoMenuHamburguesa();
+            dialogoMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
         });
 
         ImageButton atras = findViewById(R.id.atras);

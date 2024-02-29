@@ -16,7 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dam.tecnifutbol.Dialogos.DialogMenuHamburguesa;
+import com.dam.tecnifutbol.Dialogos.DialogoMenuHamburguesa;
 import com.dam.tecnifutbol.Jugador.InsertarEntrenamientosJugador;
 import com.dam.tecnifutbol.Modelo.Jugador;
 import com.dam.tecnifutbol.Entrenador.Entrenamientos.InsertarEntrenamientos;
@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static int maximoJugadoresTitulares;
 
     public static String bandoSeleccionadoEnElegirJugadores;
+    public static String partesPartido = "2";
+    public static String duracionParte = "45";
 
     SignInButton signInButton;
     TextView signOutButton;
@@ -127,8 +129,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         menuHaburguesa = findViewById(R.id.burguer_menu);
         menuHaburguesa.setOnClickListener(v -> {
-            DialogMenuHamburguesa dialogMenuHamburguesa = new DialogMenuHamburguesa();
-            dialogMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
+            DialogoMenuHamburguesa dialogoMenuHamburguesa = new DialogoMenuHamburguesa();
+            dialogoMenuHamburguesa.show(getSupportFragmentManager(), "Menu");
         });
         menuHaburguesa.setVisibility(View.GONE);
     }
