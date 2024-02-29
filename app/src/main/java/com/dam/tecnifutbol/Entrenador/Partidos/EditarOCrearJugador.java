@@ -80,6 +80,9 @@ public class EditarOCrearJugador extends AppCompatActivity {
                 swtDisponible.setChecked(false);
 
         } else {
+            if (MainActivity.clicadoEditar){
+                finish();
+            }
             // Si el jugador es nulo, se trata de una creación
             // Se rellena el spinner con los números disponibles
             consultarNumerosSpinner();
