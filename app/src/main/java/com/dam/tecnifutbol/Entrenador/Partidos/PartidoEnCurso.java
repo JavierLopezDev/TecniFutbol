@@ -215,8 +215,6 @@ public class PartidoEnCurso extends AppCompatActivity {
         tv_cronometro.setText(tiempoRestante);
     }
 
-    private void actualizarMarcador() {
-
     private void contadorInicial(long duracionMillis) {
         int minutos = (int) (duracionMillis / 1000) / 60;
         int segundos = (int) (duracionMillis / 1000) % 60;
